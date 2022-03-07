@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+
+}
+
+#start-page {
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    background-image: url(/img/f0ac27f1ff63894902fec4af51ae8ce5.png);
+    background-size: cover;
+    background-repeat: repeat;
+    overflow: hidden;
+}
+
+#start-page-header {
+    font-family: 'Rowdies', sans-serif;
+}
+
+#start-page-header h1 {
+    text-align: center;
+    margin: 0 auto 3rem auto;
+    padding-top: 8rem;
+    padding-bottom: 1rem;
+    color: #FE3B1F;
+    font-weight: 400;
+    font-size: 5rem;
+}
+
+#start-page main {
+    margin: 0;
+    padding: 0;
+}
+
+#start-page #main-section {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0 auto;
+}
+
+#start-page #start-questionnare {
+    font-size: 1.3rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #FE3B1F;
+    padding: 1.4rem 4.5rem;
+    border-radius: 50px;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+
+
+#start-page #submitions {
+    text-decoration: underline;
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: #FFFFFF;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+#start-page footer {
+    text-align: center;
+}
+
+#start-page img {
+    width: 23rem;
+    transform: rotate(-27.28deg);
+    object-fit: center;
+}
+
+/* fisrst page */

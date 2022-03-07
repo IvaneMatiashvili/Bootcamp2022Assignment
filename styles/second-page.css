@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+
+}
+
+#second-page {
+    min-height: 100vh;
+    display: flex;
+}
+
+#second-page #left-side {
+    width: 50vw;
+    background-color: #FFFFFF;
+}
+
+#second-page header {
+    font-family: 'Rowdies', sans-serif;
+}
+
+#second-page h1 {
+    text-align: center;
+    margin: 6rem 7rem 4rem 7rem;
+    color: #FE3B1F;
+    font-weight: 400;
+    font-size: 4.3rem;
+}
+
+#second-page form {
+    width: 35rem;
+    margin: auto auto 0 auto;
+    padding: 1rem;
+}
+
+
+#second-page ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#second-page li {
+    text-align: center;
+    margin: 0 auto;
+    border-color: #0C0D0E;
+}
+
+
+
+#second-page .skills {
+    background-color: #FFFFFF;
+    font: inherit;
+    padding: 0.5rem;
+    margin: 2rem 0;
+    border: 1px solid #525557;
+    width: 100%;
+    height: 4rem;
+    display: block;
+    box-sizing: border-box;
+    line-height: 1.5em;
+
+}
+
+#second-page input {
+    background-color: #FFFFFF;
+    font: inherit;
+    padding: 0.5rem;
+    margin: 2rem 0;
+    border: 1px solid #525557;
+    width: 100%;
+    height: 4rem;
+    display: block;
+    box-sizing: border-box;
+    line-height: 1.5em;
+
+}
+
+#second-page footer {
+    text-align: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+#second-page #nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 3rem 0 0 0;
+}
+
+#second-page #nav li {
+    margin: 0.5rem;
+    padding: 0;
+    cursor: pointer;
+}
+
+#second-page #add-skills {
+
+    color: #FFFFFF;
+    font-size: 0.8rem;
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    position: relative;
+    left: 19.5rem;
+    padding: 0.5rem 0.8rem;
+    background-color: #FE3B1F;
+    text-align: left;
+}
+
+
+#second-page #first__page {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0.6rem 0.6rem;
+    border: solid #FE3B1F;
+    border-radius: 40px;
+    background-color: #FE3B1F;
+    opacity: 1;
+}
+
+#second-page span {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0.6rem 0.6rem;
+    border: solid #FE3B1F;
+    border-radius: 40px;
+    background-color: #FE3B1F;
+    opacity: 0.1;
+}
+
+
+/* arrow  style */
+
+#second-page #go-back {
+    display: flex;
+    text-align: center;
+    padding: 0.3rem 0.3rem 0.3rem 0.4rem;
+    border-radius: 40px;
+    border: solid 3px #FE3B1F;
+    background-color: #FFFFFF;
+    opacity: 1;
+}
+
+#second-page #next-page {
+    display: flex;
+    text-align: center;
+    padding: 0.3rem 0.4rem 0.3rem 0.3rem;
+    border-radius: 40px;
+    border: solid 3px #FE3B1F;
+    background-color: #FFFFFF;
+    opacity: 1;
+}
+
+#second-page .arrow {
+    border: solid #FE3B1F;
+    border-width: 0 3px 3px 0;
+    border-color: #FE3B1F;
+    display: inline-block;
+    padding: 3px;
+}
+
+
+#second-page .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+#second-page .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+
+#second-page #right-side {
+    width: 50vw;
+    background: radial-gradient(50% 50% at 50% 50%, #0C0D0E 0%, #151718 73.44%);
+}

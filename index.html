@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Rowdies&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/start-page.css">
+    <link rel="stylesheet" href="styles/first-page.css">
+    <link rel="stylesheet" href="styles/second-page.css">
+    <link rel="stylesheet" href="styles/third-page.css">
+    <link rel="stylesheet" href="styles/fourth-page.css">
+    <link rel="stylesheet" href="styles/last-page.css">
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <section id="start-page" class='pages'>
+        <header id="start-page-header">
+            <h1>Welcome Rocketeer !</h1>
+        </header>
+        <main>
+            <section id="main-section">
+                <p id="start-questionnare">Start Questionnaire</p>
+                <p id="submitions"> Submitted Applications</p>
+            </section>
+        </main>
+        <footer>
+            <img src="img/6f7c4615d45526a5f978b2a74856f6b3.png" alt="">
+        </footer>
+
+    </section>
+    <section id="first-page" class="pages">
+        <section id="left-side">
+            <header>
+                <h1>Hey, Rocketeer, what are your coordinates? </h1>
+            </header>
+            <main>
+                <form>
+                    <ul>
+                        <li class="input-control">
+                            <input type="text" id="first-name" name="first-name" placeholder="First name" value=""
+                                required>
+                            <div class="f-error--one">Username is required</div>
+                            <div class="f-error--two">Please lengthen this text to 1 characters or more</div>
+                        </li>
+                        <li class="input-control">
+                            <input type="text" id="last-name" name="last-name" placeholder="Last name" required>
+                            <div class="f-error--one">Last name is required</div>
+                            <div class="f-error--two">Please lengthen this text to 1 characters or more</div>
+                        </li>
+                        <li class="input-control">
+                            <input type="email" id="email" name="email" placeholder="E Mail" required>
+                            <div class="f-error--one">
+                                Email is required
+                            </div>
+                            <div class="f-error--two">
+                                Provide a valid email address
+                            </div>
+                        </li>
+                        <li class="input-control">
+                            <input type="tel" id="phone" name="phone" placeholder="+995 5__ __ __ __" required
+                                minlength="5">
+                            <div class="f-error--one">Invalid phone number</div>
+                        </li>
+                    </ul>
+                </form>
+            </main>
+            <footer>
+                <ul id="nav" class="nav">
+                    <li>
+                        <span id="go-back" class='arrow-left'><i class="arrow left"></i> </span>
+                    </li>
+                    <li>
+                        <span id="first__page" class="current__page"></span>
+                    </li>
+                    <li>
+                        <span id="second__page" class="current__page"></span>
+                    </li>
+                    <li>
+                        <span id="third__pages" class="current__page"></span>
+                    </li>
+                    <li>
+                        <span id="fourth__page" class="current__page"> </span>
+                    </li>
+                    <li>
+                        <span id="fifth__page" class="current__page"></span>
+                    </li>
+                    <li>
+                        <span id="next-page" class='arrow-right'><i class="arrow right"></i> </span>
+                    </li>
+                </ul>
+            </footer>
+
+        </section>
+        <section id="right-side">
+            <main>
+            </main>
+        </section>
+    </section>
+    <section id="second-page" class="pages">
+        <section id="left-side">
+            <header>
+                <h1>Hey, Rocketeer, what are your coordinates? </h1>
+            </header>
+            <main>
+                <form>
+                    <ul>
+                        <li>
+                            <select name="skills" class="skills">
+                            </select>
+                        </li>
+                        <li>
+                            <input type="text" id="Experience" name="Experience"
+                                placeholder="Experience Duration in Years" required>
+                        </li>
+                        <div id="add-skills">
+                            <p> Add Programming Language </p>
+                        </div>
+                    </ul>
+                </form>
+            </main>
+            <footer>
+                <ul id="nav" class="nav">
+                    <li>
+                        <span id="go-back" class='arrow-left'><i class="arrow left"></i> </span>
+                    </li>
+                    <li>
+                        <span id="first__page" class="current__page"></span>
+                    </li>
+                    <li>
+                        <span id="second__page" class="current__page"></span>
+                    </li>
+                    <li>
+                        <span id="third__pages" class="current__page"></span>
+                    </li>
+                    <li>
+                        <span id="fourth__page" class="current__page"> </span>
+                    </li>
+                    <li>
+                        <span id="fifth__page" class="current__page"></span>
+                    </li>
+                    <li>
+                        <span id="next-page" class='arrow-right'><i class="arrow right"></i> </span>
+                    </li>
+                </ul>
+            </footer>
+
+        </section>
+        <section id="right-side">
+            <main>
+            </main>
+        </section>
+    </section>
+    <section id="third-page" class="pages">
+        <section id="left-side">
+            <header>
+                <h1>Hey, Rocketeer, what are your coordinates? </h1>
+            </header>
+            <main>
+                <form>
+                    <ul>
+                        <li>
+                            <input type="text" id="first-rname" name="first-name" placeholder="First name" required>
+                        </li>
+                        <li>
+                            <input type="text" id="last-name" name="last-name" placeholder="Last name" required>
+                        </li>
+                        <li>
+                            <input type="email" id="email" name="email" placeholder="E Mail" required>
+                        </li>
+                        <li>
+                            <input type="tel" id="phone" name="phone" placeholder="+995 5__ __ __ __" required
+                                minlength="5">
+                        </li>
+                    </ul>
+                </form>
+            </main>
+            <footer>
+                <ul id="nav" class="nav">
+                    <li>
+                        <span id="go-back" class='arrow-left'><i class="arrow left"></i> </span>
+                    </li>
+                    <li>
+                        <span id="first__page" class="current__page"></span>
+                    </li>
+                    <li>
+                        <span id="second__page" class="current__page"></span>
+                    </li>
+                    <li>
+                        <span id="third__pages" class="current__page"></span>
+                    </li>
+                    <li>
+                        <span id="fourth__page" class="current__page"> </span>
+                    </li>
+                    <li>
+                        <span id="fifth__page" class="current__page"></span>
+                    </li>
+                    <li>
+                        <span id="next-page" class='arrow-right'><i class="arrow right"></i> </span>
+                    </li>
+                </ul>
+            </footer>
+
+        </section>
+        <section id="right-side">
+            <main>
+            </main>
+        </section>
+    </section>
+    <section id="fourth-page" class="pages">
+        <section id="left-side">
+            <header>
+                <h1>Hey, Rocketeer, what are your coordinates? </h1>
+            </header>
+            <main>
+                <form>
+                    <ul>
+                        <li>
+                            <input type="text" id="first-rname" name="first-name" placeholder="First name" required>
+                        </li>
+                        <li>
+                            <input type="text" id="last-name" name="last-name" placeholder="Last name" required>
+                        </li>
+                        <li>
+                            <input type="email" id="email" name="email" placeholder="E Mail" required>
+                        </li>
+                        <li>
+                            <input type="tel" id="phone" name="phone" placeholder="+995 5__ __ __ __" required
+                                minlength="5">
+                        </li>
+                    </ul>
+                </form>
+            </main>
+            <footer>
+                <ul id="nav" class="nav">
+                    <li>
+                        <span id="go-back" class='arrow-left'><i class="arrow left"></i> </span>
+                    </li>
+                    <li>
+                        <span id="first__page" class="current__page"></span>
+                    </li>
+                    <li>
+                        <span id="second__page" class="current__page"></span>
+                    </li>
+                    <li>
+                        <span id="third__pages" class="current__page"></span>
+                    </li>
+                    <li>
+                        <span id="fourth__page" class="current__page"> </span>
+                    </li>
+                    <li>
+                        <span id="fifth__page" class="current__page"></span>
+                    </li>
+                    <li>
+                        <span id="next-page" class='arrow-right'><i class="arrow right"></i> </span>
+                    </li>
+                </ul>
+            </footer>
+
+        </section>
+        <section id="right-side">
+            <main>
+            </main>
+        </section>
+    </section>
+    <section id="last-page" class='pages'>
+        <header id="start-page-header">
+            <h1>Welcome Rocketeer !</h1>
+        </header>
+        <main>
+            <section id="main-section">
+                <p id="start-questionnare">Start Questionnaire</p>
+                <p id="submitions" class="arrow-left"> Go back</p>
+            </section>
+        </main>
+        <footer>
+            <img src="img/6f7c4615d45526a5f978b2a74856f6b3.png" alt="">
+        </footer>
+
+    </section>
+</body>
+
+</html>
