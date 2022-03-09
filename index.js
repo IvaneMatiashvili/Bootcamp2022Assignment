@@ -5,6 +5,9 @@ const startPage = document.getElementById('start-page');
 const firstPage = document.getElementById('first-page');
 const pages = document.querySelectorAll('.pages');
 const button = document.querySelectorAll('.current__page');
+const arrowLeft = document.querySelectorAll('.arrow.left');
+const arrowRight = document.querySelectorAll('.arrow.right');
+
 
 // form first-page
 
@@ -23,18 +26,211 @@ const experience = document.getElementById('experience');
 const skills = document.querySelector('.skills')
 let skillsResult = [];
 
-
-//last page
+//last page vars
 
 const submit = document.getElementById('submit');
 
-   submit.addEventListener('click', () => {
+
+// start page
+
+
+function startQuestionnare() {
+
+   startPage.style.display = 'none';
+   firstPage.style.display = 'flex'
+}
+
+startBtn.addEventListener('click', startQuestionnare);
+
+
+// first page
+
+let counterOne = 0;
+
+let firstNameArr = [];
+let lastNameArr = [];
+let emailArr = [];
+let numberArr = [];
+
+function pageControlOne(event) {
+
+   let el = event.target;
+
+   let firstNameValue = firstName.value.trim();
+   let lastNameValue = lastName.value.trim();
+   let emailValue = email.value.trim();
+   let numberValue = number.value.trim();
+   firstNameArr.push(firstNameValue);
+   lastNameArr.push(lastNameValue);
+   emailArr.push(emailValue);
+   numberArr.push(numberValue);
+
+   if (firstNameValue === '') {
+      firstName.style.borderColor = '#ff3860';
+      fErrorOne[0].style.display = 'block';
+      fErrorTwo[0].style.display = 'none';
+   } else if (firstNameValue.length < 2) {
+      fErrorOne[0].style.display = 'none';
+      fErrorTwo[0].style.display = 'block';
+      firstName.style.borderColor = '#ff3860';
+   } else if (firstNameValue.length >= 2) {
+      fErrorOne[0].style.display = 'none';
+      fErrorTwo[0].style.display = 'none';
+      firstName.style.borderColor = '#525557';
+
+      counterOne = 1;
+   }
+
+   if (lastNameValue === '') {
+
+      lastName.style.borderColor = '#ff3860';
+      fErrorOne[1].style.display = 'block';
+      fErrorTwo[1].style.display = 'none';
+   } else if (lastNameValue.length < 2) {
+      fErrorOne[1].style.display = 'none';
+      fErrorTwo[1].style.display = 'block';
+      lastName.style.borderColor = '#ff3860';
+   } else if (lastNameValue.length >= 2) {
+      fErrorOne[1].style.display = 'none';
+      fErrorTwo[1].style.display = 'none';
+      lastName.style.borderColor = '#525557';
+
+      if (counterOne === 1) counterOne = 2;
+   }
+
+   const isValidEmail = email => {
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+   }
+
+   if (emailValue === '') {
+
+      email.style.borderColor = '#ff3860';
+      fErrorOne[2].style.display = 'block';
+      fErrorTwo[2].style.display = 'none';
+   } else if (!isValidEmail(emailValue)) {
+      fErrorOne[2].style.display = 'none';
+      fErrorTwo[2].style.display = 'block';
+      email.style.borderColor = '#ff3860';
+   } else {
+      fErrorOne[2].style.display = 'none';
+      fErrorTwo[2].style.display = 'none';
+      email.style.borderColor = '#525557';
+
+      if (counterOne === 2) counterOne = 3;
+   }
+
+   if (numberValue.length > 0 && +numberValue === NaN) {
+
+      number.style.borderColor = '#ff3860';
+      fErrorOne[3].style.display = 'block';
+   } else if (numberValue !== '' && numberValue.length !== 9) {
+      fErrorOne[3].style.display = 'block';
+      number.style.borderColor = '#ff3860';
+   } else if (numberValue !== '' && +numberValue[0] !== 5) {
+      fErrorOne[3].style.display = 'block';
+   } else {
+      fErrorOne[3].style.display = 'none';
+      email.style.borderColor = '#525557';
+      if (counterOne === 3) counterOne = 4;
+   }
+   if (counterOne === 4) {
+      if (el === button[1]) {
+         pages[1].style.display = 'none';
+         pages[2].style.display = 'flex';
+         pages[3].style.display = 'none';
+         pages[4].style.display = 'none';
+         pages[5].style.display = 'none';
+      }
+      if (el === button[2]) {
+         pages[1].style.display = 'none';
+         pages[2].style.display = 'none';
+         pages[3].style.display = 'flex';
+         pages[4].style.display = 'none';
+         pages[5].style.display = 'none';
+      }
+      if (el === button[3]) {
+         pages[1].style.display = 'none';
+         pages[2].style.display = 'none';
+         pages[3].style.display = 'none';
+         pages[4].style.display = 'flex';
+         pages[5].style.display = 'none';
+      }
+      if (el === button[4]) {
+         pages[1].style.display = 'none';
+         pages[2].style.display = 'none';
+         pages[3].style.display = 'none';
+         pages[4].style.display = 'none';
+         pages[5].style.display = 'block';
+      }
+      if(el === nextPage[0] || el === arrowRight[0]) {
+         pages[1].style.display = 'none';
+         pages[2].style.display = 'flex';
+      }
+   }
+}
+
+button[1].addEventListener('click', pageControlOne)
+button[2].addEventListener('click', pageControlOne)
+button[3].addEventListener('click', pageControlOne)
+button[4].addEventListener('click', pageControlOne)
+
+// arrow right  first page
+
+
+nextPage[0].addEventListener('click', pageControlOne);
+arrowRight[0].addEventListener('click', pageControlOne);
+
+
+
+// left arrow buttons
+
+function leftArrowClick(event) {
+   let el = event.target;
+   if (el === goBackBtn[0] || el === arrowLeft[0]) {
+      pages[1].style.display = 'none';
+      pages[0].style.display = 'block';
+   }
+   if (el === goBackBtn[1] || el === arrowLeft[1]) {
+      pages[2].style.display = 'none';
+      pages[1].style.display = 'flex';
+   }
+   if (el === goBackBtn[2] || el === arrowLeft[2]) {
+      pages[3].style.display = 'none';
+      pages[2].style.display = 'flex';
+   }
+   if (el === goBackBtn[3] || el === arrowLeft[3]) {
+      pages[4].style.display = 'none';
+      pages[3].style.display = 'flex';
+   }
+   if (el === goBackBtn[4]) {
       pages[5].style.display = 'none';
-      pages[6].style.display = 'flex';
-      setTimeout(function () {
+      pages[4].style.display = 'flex';
+   }
+}
+
+
+goBackBtn[0].addEventListener('click', leftArrowClick);
+goBackBtn[1].addEventListener('click', leftArrowClick);
+goBackBtn[2].addEventListener('click', leftArrowClick);
+goBackBtn[3].addEventListener('click', leftArrowClick);
+goBackBtn[4].addEventListener('click', leftArrowClick);
+arrowLeft[0].addEventListener('click', leftArrowClick);
+arrowLeft[1].addEventListener('click', leftArrowClick);
+arrowLeft[2].addEventListener('click', leftArrowClick);
+arrowLeft[3].addEventListener('click', leftArrowClick);
+
+
+
+// last page
+
+submit.addEventListener('click', () => {
+   pages[5].style.display = 'none';
+   pages[6].style.display = 'flex';
+   setTimeout(function () {
       pages[6].style.display = 'none';
       pages[0].style.display = 'block';
-      }, 3000)
+   }, 3000)
 })
 
 async function getSkillsData() {
@@ -180,141 +376,6 @@ function addSkillsF() {
 
 addSkills.addEventListener('click', addSkillsF);
 
-
-function startQuestionnare() {
-
-   startPage.style.display = 'none';
-   firstPage.style.display = 'flex'
-}
-
-startBtn.addEventListener('click', startQuestionnare);
-
-let counterOne = 0;
-
-let firstNameArr = [];
-let lastNameArr = [];
-let emailArr = [];
-let numberArr = [];
-
-function pageControlTwo(event) {
-
-   let el = event.target;
-
-   let firstNameValue = firstName.value.trim();
-   let lastNameValue = lastName.value.trim();
-   let emailValue = email.value.trim();
-   let numberValue = number.value.trim();
-   firstNameArr.push(firstNameValue);
-   lastNameArr.push(lastNameValue);
-   emailArr.push(emailValue);
-   numberArr.push(numberValue);
-
-   if (firstNameValue === '') {
-      firstName.style.borderColor = '#ff3860';
-      fErrorOne[0].style.display = 'block';
-      fErrorTwo[0].style.display = 'none';
-   } else if (firstNameValue.length < 2) {
-      fErrorOne[0].style.display = 'none';
-      fErrorTwo[0].style.display = 'block';
-      firstName.style.borderColor = '#ff3860';
-   } else if (firstNameValue.length >= 2) {
-      fErrorOne[0].style.display = 'none';
-      fErrorTwo[0].style.display = 'none';
-      firstName.style.borderColor = '#525557';
-
-      counterOne = 1;
-   }
-
-   if (lastNameValue === '') {
-
-      lastName.style.borderColor = '#ff3860';
-      fErrorOne[1].style.display = 'block';
-      fErrorTwo[1].style.display = 'none';
-   } else if (lastNameValue.length < 2) {
-      fErrorOne[1].style.display = 'none';
-      fErrorTwo[1].style.display = 'block';
-      lastName.style.borderColor = '#ff3860';
-   } else if (lastNameValue.length >= 2) {
-      fErrorOne[1].style.display = 'none';
-      fErrorTwo[1].style.display = 'none';
-      lastName.style.borderColor = '#525557';
-
-      if (counterOne === 1) counterOne = 2;
-      console.log(counterOne);
-   }
-
-   const isValidEmail = email => {
-      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(String(email).toLowerCase());
-   }
-
-   if (emailValue === '') {
-
-      email.style.borderColor = '#ff3860';
-      fErrorOne[2].style.display = 'block';
-      fErrorTwo[2].style.display = 'none';
-   } else if (!isValidEmail(emailValue)) {
-      fErrorOne[2].style.display = 'none';
-      fErrorTwo[2].style.display = 'block';
-      email.style.borderColor = '#ff3860';
-   } else {
-      fErrorOne[2].style.display = 'none';
-      fErrorTwo[2].style.display = 'none';
-      email.style.borderColor = '#525557';
-
-      if (counterOne === 2) counterOne = 3;
-   }
-
-   if (numberValue.length > 0 && +numberValue === NaN) {
-
-      number.style.borderColor = '#ff3860';
-      fErrorOne[3].style.display = 'block';
-   } else if (numberValue !== '' && numberValue.length !== 9) {
-      fErrorOne[3].style.display = 'block';
-      number.style.borderColor = '#ff3860';
-   } else if (numberValue !== '' && +numberValue[0] !== 5) {
-      fErrorOne[3].style.display = 'block';
-   } else {
-      fErrorOne[3].style.display = 'none';
-      email.style.borderColor = '#525557';
-      if (counterOne === 3) counterOne = 4;
-   }
-   if (counterOne === 4) {
-      if (el === button[1]) {
-         pages[1].style.display = 'none';
-         pages[2].style.display = 'flex';
-         pages[3].style.display = 'none';
-         pages[4].style.display = 'none';
-         pages[5].style.display = 'none';
-      }
-      if (el === button[2]) {
-         pages[1].style.display = 'none';
-         pages[2].style.display = 'none';
-         pages[3].style.display = 'flex';
-         pages[4].style.display = 'none';
-         pages[5].style.display = 'none';
-      }
-      if (el === button[3]) {
-         pages[1].style.display = 'none';
-         pages[2].style.display = 'none';
-         pages[3].style.display = 'none';
-         pages[4].style.display = 'flex';
-         pages[5].style.display = 'none';
-      }
-      if (el === button[4]) {
-         pages[1].style.display = 'none';
-         pages[2].style.display = 'none';
-         pages[3].style.display = 'none';
-         pages[4].style.display = 'none';
-         pages[5].style.display = 'block';
-      }
-   }
-}
-
-button[1].addEventListener('click', pageControlTwo)
-button[2].addEventListener('click', pageControlTwo)
-button[3].addEventListener('click', pageControlTwo)
-button[4].addEventListener('click', pageControlTwo)
 
 
 /* function pageControlThree() {
