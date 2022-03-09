@@ -1,7 +1,7 @@
 
 #second-page {
     min-height: 100vh;
-    display: none;
+    display: flex;
 }
 
 #second-page #left-side {

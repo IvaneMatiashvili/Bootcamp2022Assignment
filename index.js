@@ -221,17 +221,7 @@ arrowLeft[2].addEventListener('click', leftArrowClick);
 arrowLeft[3].addEventListener('click', leftArrowClick);
 
 
-
-// last page
-
-submit.addEventListener('click', () => {
-   pages[5].style.display = 'none';
-   pages[6].style.display = 'flex';
-   setTimeout(function () {
-      pages[6].style.display = 'none';
-      pages[0].style.display = 'block';
-   }, 3000)
-})
+// second page
 
 async function getSkillsData() {
 
@@ -376,6 +366,65 @@ function addSkillsF() {
 
 addSkills.addEventListener('click', addSkillsF);
 
+function pageControlTwo(event) {
+
+   let el = event.target;
+    if (el === button[5]) {
+         pages[1].style.display = 'flex';
+         pages[2].style.display = 'none';
+         pages[3].style.display = 'none';
+         pages[4].style.display = 'none';
+         pages[5].style.display = 'none';
+      }
+      if (el === button[7]) {
+         pages[1].style.display = 'none';
+         pages[2].style.display = 'none';
+         pages[3].style.display = 'flex';
+         pages[4].style.display = 'none';
+         pages[5].style.display = 'none';
+      }
+      if (el === button[8]) {
+         pages[1].style.display = 'none';
+         pages[2].style.display = 'none';
+         pages[3].style.display = 'none';
+         pages[4].style.display = 'flex';
+         pages[5].style.display = 'none';
+      }
+      if (el === button[9]) {
+         pages[1].style.display = 'none';
+         pages[2].style.display = 'none';
+         pages[3].style.display = 'none';
+         pages[4].style.display = 'none';
+         pages[5].style.display = 'block';
+      }
+      if(el === nextPage[1] || el === arrowRight[1]) {
+         pages[2].style.display = 'none';
+         pages[3].style.display = 'flex';
+      }
+}
+
+
+button[5].addEventListener('click', pageControlTwo)
+button[7].addEventListener('click', pageControlTwo)
+button[8].addEventListener('click', pageControlTwo)
+button[9].addEventListener('click', pageControlTwo)
+
+// arrow right  second page
+
+
+nextPage[1].addEventListener('click', pageControlTwo);
+arrowRight[1].addEventListener('click', pageControlTwo);
+
+// last page
+
+submit.addEventListener('click', () => {
+   pages[5].style.display = 'none';
+   pages[6].style.display = 'flex';
+   setTimeout(function () {
+      pages[6].style.display = 'none';
+      pages[0].style.display = 'block';
+   }, 3000)
+})
 
 
 /* function pageControlThree() {
