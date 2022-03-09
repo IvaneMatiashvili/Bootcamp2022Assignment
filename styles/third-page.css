@@ -13,7 +13,7 @@
 
 #third-page #left-side {
     width: 50vw;
-    background-color: black;
+    background-color: #FFFFFF;
 }
 
 #third-page header {
@@ -58,6 +58,11 @@
     box-sizing: border-box;
 }
 
+#third-page #when {
+    margin-top: 4rem;
+}
+
+
 #third-page input:placeholder-shown {
     padding-left: 2rem;
 }
@@ -66,11 +71,59 @@
     padding-left: 2rem;
 }
 
+#third-page input[type=date] {
+  text-align: right;
+}
+
+#third-page input[type="date"]:before {
+  content: attr(placeholder) !important;
+  margin: 0 1.5rem;
+  color: #525557;
+}
+
+#first-page input[type="date"]:focus:before {
+  content: '' !important;
+}
+
+
+#third-page .form-control-inline {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -1.9rem;
+    padding: 0;
+    align-items: center;
+}
+
+#third-page__question {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+
+#third-page label {
+    font: 15px 'Montserrat', sans-serif;
+    margin: 0;
+    margin-left: 0.5rem;
+}
+
+#third-page .form-control-inline input {
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+#third-page #second-radio {
+    margin-top: 5rem;
+}
+
 #third-page footer {
     text-align: center;
     align-items: center;
     margin: 0;
     padding: 0;
+    margin-bottom: 5rem;
 }
 
 #third-page #nav {
@@ -98,6 +151,30 @@
     opacity: 1;
 }
 
+
+#third-page #second__page {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0.6rem 0.6rem;
+    border: solid #FE3B1F;
+    border-radius: 40px;
+    background-color: #FE3B1F;
+    opacity: 1;
+}
+
+#third-page #third__page {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0.6rem 0.6rem;
+    border: solid #FE3B1F;
+    border-radius: 40px;
+    background-color: #FE3B1F;
+    opacity: 1;
+}
+
+
 #third-page span {
     display: flex;
     align-items: center;
@@ -111,7 +188,7 @@
 
 /* arrow  style */
 
-#third-page #go-back{
+#third-page #go-back {
     display: flex;
     text-align: center;
     padding: 0.3rem 0.3rem 0.3rem 0.4rem;
@@ -121,7 +198,7 @@
     opacity: 1;
 }
 
-#third-page #next-page{
+#third-page #next-page {
     display: flex;
     text-align: center;
     padding: 0.3rem 0.4rem 0.3rem 0.3rem;
@@ -146,8 +223,8 @@
 }
 
 #third-page .right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
 }
 
 
@@ -163,7 +240,7 @@
 }
 
 #third-page #right-side h2 {
-    margin-top: 10rem;
+    margin-top: 5rem;
     font-weight: 400;
     font-size: 64px;
     color: #FE3B1F;

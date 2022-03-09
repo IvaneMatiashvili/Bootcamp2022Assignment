@@ -93,6 +93,7 @@
     align-items: center;
     margin: 0;
     padding: 0;
+    margin-bottom: 5rem;
 }
 
 #first-page #nav {
@@ -185,7 +186,7 @@
 }
 
 #first-page #right-side h2 {
-    margin-top: 10rem;
+    margin-top: 8rem;
     font-weight: 400;
     font-size: 64px;
     color: #FE3B1F;

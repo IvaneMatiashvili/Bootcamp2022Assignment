@@ -183,17 +183,76 @@
                 <form>
                     <ul>
                         <li>
-                            <input type="text" id="first-rname" name="first-name" placeholder="First name" required>
+                            <ul>
+                                <p id="third-page__question">how would you prefer to work?</p>
+                                <li class="form-control-inline">
+                                    <input type="radio" name="verify" id="verify-text-message" value="text-message"
+                                        required>
+                                    <label for="verify-text-message">
+                                        From Sairme Office
+                                    </label>
+                                </li>
+                                <li class="form-control-inline">
+                                    <input type="radio" name="verify" id="verify-text-message" value="text-message"
+                                        required>
+                                    <label for="verify-text-message">
+                                        From Home
+                                    </label>
+                                </li>
+                                <li class="form-control-inline">
+                                    <input type="radio" name="verify" id="verify-text-message" value="text-message"
+                                        required>
+                                    <label for="verify-text-message">
+                                        Hybrid
+                                    </label>
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <input type="text" id="last-name" name="last-name" placeholder="Last name" required>
+                            <ul id="second-radio">
+                                <p id="third-page__question">Did you contact covid 19? :(</p>
+                                <li class="form-control-inline">
+                                    <input type="radio" name="verify" id="verify-text-message" value="text-message"
+                                        required>
+                                    <label for="verify-text-message">
+                                        Yes
+                                    </label>
+                                </li>
+                                <li class="form-control-inline">
+                                    <input type="radio" name="verify" id="verify-text-message" value="text-message"
+                                        required>
+                                    <label for="verify-text-message">
+                                        No
+                                    </label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="when">
+                            <p id="third-page__question">When?</p>
+                            <input type="date" name="covid-date" id="covid-date" required placeholder="Date" />
                         </li>
                         <li>
-                            <input type="email" id="email" name="email" placeholder="E Mail" required>
+                            <ul id="second-radio">
+                                <p id="third-page__question">Have you been vaccinated?</p>
+                                <li class="form-control-inline">
+                                    <input type="radio" name="verify" id="verify-text-message" value="text-message"
+                                        required>
+                                    <label for="verify-text-message">
+                                        Yes
+                                    </label>
+                                </li>
+                                <li class="form-control-inline">
+                                    <input type="radio" name="verify" id="verify-text-message" value="text-message"
+                                        required>
+                                    <label for="verify-text-message">
+                                        No
+                                    </label>
+                                </li>
+                            </ul>
                         </li>
-                        <li>
-                            <input type="tel" id="phone" name="phone" placeholder="+995 5__ __ __ __" required
-                                minlength="5">
+                        <li id="when">
+                            <p id="third-page__question">When did you get your last covid vaccine?</p>
+                            <input type="date" name="covid-date" id="covid-date" required placeholder="Date" />
                         </li>
                     </ul>
                 </form>
@@ -210,7 +269,7 @@
                         <span id="second__page" class="current__page"></span>
                     </li>
                     <li>
-                        <span id="third__pages" class="current__page"></span>
+                        <span id="third__page" class="current__page"></span>
                     </li>
                     <li>
                         <span id="fourth__page" class="current__page"> </span>
@@ -278,7 +337,7 @@
                         <span id="second__page" class="current__page"></span>
                     </li>
                     <li>
-                        <span id="third__pages" class="current__page"></span>
+                        <span id="third__page" class="current__page"></span>
                     </li>
                     <li>
                         <span id="fourth__page" class="current__page"> </span>

@@ -8,12 +8,12 @@
 
 #fourth-page {
     min-height: 100vh;
-    display: flex;
+    display: none;
 }
 
 #fourth-page #left-side {
     width: 50vw;
-    background-color: green;
+    background-color: #FFFFFF;
 }
 
 #fourth-page header {
@@ -71,6 +71,7 @@
     align-items: center;
     margin: 0;
     padding: 0;
+    margin-bottom: 5rem;
 }
 
 #fourth-page #nav {
@@ -88,6 +89,40 @@
 
 
 #fourth-page #first__page {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0.6rem 0.6rem;
+    border: solid #FE3B1F;
+    border-radius: 40px;
+    background-color: #FE3B1F;
+    opacity: 1;
+}
+
+#fourth-page #second__page {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0.6rem 0.6rem;
+    border: solid #FE3B1F;
+    border-radius: 40px;
+    background-color: #FE3B1F;
+    opacity: 1;
+}
+
+
+#fourth-page #third__page {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0.6rem 0.6rem;
+    border: solid #FE3B1F;
+    border-radius: 40px;
+    background-color: #FE3B1F;
+    opacity: 1;
+}
+
+#fourth-page #fourth__page {
     display: flex;
     align-items: center;
     margin: 0;
@@ -163,7 +198,7 @@
 }
 
 #fourth-page #right-side h2 {
-    margin-top: 10rem;
+    margin-top: 8rem;
     font-weight: 400;
     font-size: 64px;
     color: #FE3B1F;
