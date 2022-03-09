@@ -9,7 +9,7 @@
 #start-page {
     height: 100vh;
     width: 100%;
-    background-color: black;
+    background-color: #0C0D0E;
     background-image: url(/img/f0ac27f1ff63894902fec4af51ae8ce5.png);
     background-size: cover;
     background-repeat: repeat;
@@ -80,4 +80,3 @@
     object-fit: center;
 }
 
-/* fisrst page */
