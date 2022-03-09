@@ -470,6 +470,59 @@ button[14].addEventListener('click', pageControlThree)
 nextPage[2].addEventListener('click', pageControlThree);
 arrowRight[2].addEventListener('click', pageControlThree);
 
+// fourth page
+
+// nav control fourth page
+
+function pageControlFour(event) {
+
+   let el = event.target;
+    if (el === button[15]) {
+         pages[1].style.display = 'flex';
+         pages[2].style.display = 'none';
+         pages[3].style.display = 'none';
+         pages[4].style.display = 'none';
+         pages[5].style.display = 'none';
+      }
+      if (el === button[16]) {
+         pages[1].style.display = 'none';
+         pages[2].style.display = 'flex';
+         pages[3].style.display = 'none';
+         pages[4].style.display = 'none';
+         pages[5].style.display = 'none';
+      }
+      if (el === button[17]) {
+         pages[1].style.display = 'none';
+         pages[2].style.display = 'none';
+         pages[3].style.display = 'flex';
+         pages[4].style.display = 'none';
+         pages[5].style.display = 'none';
+      }
+      if (el === button[19]) {
+         pages[1].style.display = 'none';
+         pages[2].style.display = 'none';
+         pages[3].style.display = 'none';
+         pages[4].style.display = 'none';
+         pages[5].style.display = 'block';
+      }
+      if(el === nextPage[3] || el === arrowRight[3]) {
+         pages[4].style.display = 'none';
+         pages[5].style.display = 'block';
+      }
+}
+
+
+button[15].addEventListener('click', pageControlFour)
+button[16].addEventListener('click', pageControlFour)
+button[17].addEventListener('click', pageControlFour)
+button[19].addEventListener('click', pageControlFour)
+
+// arrow right  Fourth page
+
+
+nextPage[3].addEventListener('click', pageControlFour);
+arrowRight[3].addEventListener('click', pageControlFour);
+
 // last page
 
 submit.addEventListener('click', () => {
