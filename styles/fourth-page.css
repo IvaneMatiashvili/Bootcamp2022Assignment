@@ -56,6 +56,10 @@
     height: 100%;
 }
 
+#fourth-page #whatT {
+    display: none;
+}
+
 #fourth-page .what {
     margin-top: 4rem;
 }

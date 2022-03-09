@@ -26,9 +26,15 @@ const experience = document.getElementById('experience');
 const skills = document.querySelector('.skills');
 
 //third-page
+
 const when = document.querySelectorAll('.when');
 const covid = document.querySelectorAll('.covid');
 const vaccinated = document.querySelectorAll('.vaccinated');
+
+// fourth-page
+
+const devtalk = document.querySelectorAll('.devtalk');
+const what = document.querySelectorAll('.what');
 
 //last page vars
 
@@ -424,7 +430,6 @@ arrowRight[1].addEventListener('click', pageControlTwo);
 
 // third page
 
-// nav control third page
 let covidValue;
 let vaccinatedValue;
 
@@ -461,6 +466,9 @@ covid[0].addEventListener('click', covidCheck);
 covid[1].addEventListener('click', covidCheck);
 vaccinated[0].addEventListener('click', covidCheck);
 vaccinated[1].addEventListener('click', covidCheck);
+
+
+// nav control third page
 
 function pageControlThree(event) {
 
@@ -512,6 +520,28 @@ nextPage[2].addEventListener('click', pageControlThree);
 arrowRight[2].addEventListener('click', pageControlThree);
 
 // fourth page
+
+let devtalkValue ;
+
+function covidCheck(event) { 
+   let el = event.target;
+   if(el === devtalk[0]){
+       devtalkValue = 1;
+   }
+   if(el === devtalk[1]){
+       devtalkValue = 0;
+   }
+
+if(devtalkValue === 1) {
+   what[0].style.display = 'block'
+}
+if(devtalkValue === 0) {
+   what[0].style.display = 'none'
+}
+}
+
+devtalk[0].addEventListener('click', covidCheck);
+devtalk[1].addEventListener('click', covidCheck);
 
 // nav control fourth page
 
