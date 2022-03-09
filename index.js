@@ -23,6 +23,20 @@ const experience = document.getElementById('experience');
 const skills = document.querySelector('.skills')
 let skillsResult = [];
 
+
+//last page
+
+const submit = document.getElementById('submit');
+
+   submit.addEventListener('click', () => {
+      pages[5].style.display = 'none';
+      pages[6].style.display = 'flex';
+      setTimeout(function () {
+      pages[6].style.display = 'none';
+      pages[0].style.display = 'block';
+      }, 3000)
+})
+
 async function getSkillsData() {
 
    let getData = await fetch('https://bootcamp-2022.devtest.ge/api/skills')
@@ -94,15 +108,15 @@ function addSkillsF() {
       if (sum === 2) {
          if (experienceGenerator.childNodes[8].childNodes[2]) {
             experienceGenerator.childNodes[8].childNodes[2].addEventListener('click', () => {
-               if(sum === 1){
-               experienceGenerator.childNodes[7].remove();
-               sum--;
-               sPreviousEl = '';
+               if (sum === 1) {
+                  experienceGenerator.childNodes[7].remove();
+                  sum--;
+                  sPreviousEl = '';
                }
-               if(sum === 2){
-               experienceGenerator.childNodes[8].remove();
-               sum--;
-               sPreviousEl = '';
+               if (sum === 2) {
+                  experienceGenerator.childNodes[8].remove();
+                  sum--;
+                  sPreviousEl = '';
                }
             })
          }
