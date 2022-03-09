@@ -6,7 +6,7 @@ const firstPage = document.getElementById('first-page');
 const pages = document.querySelectorAll('.pages');
 const button = document.querySelectorAll('.current__page');
 
-// form
+// form first-page
 
 const firstName = document.getElementById('first-name');
 const fErrorOne = document.querySelectorAll('.f-error--one');
@@ -15,10 +15,13 @@ const lastName = document.getElementById('last-name');
 const email = document.getElementById('email');
 const number = document.getElementById('phone');
 
-//
+// form second-page
 
-const skills = document.querySelector('.skills');
-let result = [];
+const experienceGenerator = document.getElementById('experience-generator');
+const addSkills = document.getElementById('add-skills');
+const experience = document.getElementById('experience');
+const skills = document.querySelector('.skills')
+let skillsResult = [];
 
 async function getSkillsData() {
 
@@ -26,21 +29,142 @@ async function getSkillsData() {
       .then(function (response) {
          return response.json();
       })
-      .then(data => result = data);
-   console.log(result[0].title)
-   result.forEach((elm, idx) => {
+      .then(data => skillsResult = data);
+
+   skillsResult.forEach((elm, idx) => {
 
       let el = document.createElement('option');
+
       let node = document.createTextNode(elm.title);
 
+      el.value = elm.title;
       el.appendChild(node);
-
       skills.appendChild(el);
-      console.log(el.value)
    })
+
+}
+getSkillsData();
+
+let sum = 0;
+let sPreviousEl = '';
+let sCurrentEl = '';
+
+let arr = [];
+
+function addSkillsF() {
+
+   sCurrentEl = skills.value.trim();
+
+
+   if (sCurrentEl !== sPreviousEl) {
+      sPreviousEl = skills.value.trim();
+
+
+      sum++;
+
+      let el = document.createElement('li');
+
+      let elChiledOne = document.createElement('p');
+      let elChiledTwo = document.createElement('p');
+      elChiledTwo.classList.add('second-chiled');
+      let elChiledThree = document.createElement('p');
+      elChiledThree.classList.add('third-chiled');
+
+      elChiledOne.textContent = skills.value;
+      elChiledTwo.textContent = `Years of Experience: ${experience.value.trim()}`;
+      elChiledThree.textContent = '-';
+
+
+      el.classList.add('skills-experience');
+
+      el.appendChild(elChiledOne);
+      el.appendChild(elChiledTwo);
+      el.appendChild(elChiledThree);
+
+      experienceGenerator.appendChild(el);
+      if (sum === 1) {
+         if (experienceGenerator.childNodes[7].childNodes[2]) {
+            experienceGenerator.childNodes[7].childNodes[2].addEventListener('click', () => {
+               experienceGenerator.childNodes[7].remove();
+               sum--;
+               sPreviousEl = '';
+            })
+         }
+      }
+      if (sum === 2) {
+         if (experienceGenerator.childNodes[8].childNodes[2]) {
+            experienceGenerator.childNodes[8].childNodes[2].addEventListener('click', () => {
+               if(sum === 1){
+               experienceGenerator.childNodes[7].remove();
+               sum--;
+               sPreviousEl = '';
+               }
+               if(sum === 2){
+               experienceGenerator.childNodes[8].remove();
+               sum--;
+               sPreviousEl = '';
+               }
+            })
+         }
+      }
+      if (sum === 3) {
+         if (experienceGenerator.childNodes[9].childNodes[2]) {
+            experienceGenerator.childNodes[9].childNodes[2].addEventListener('click', () => {
+               experienceGenerator.childNodes[9].remove();
+               sum--;
+               sPreviousEl = '';
+            })
+         }
+      }
+      if (sum === 4) {
+         if (experienceGenerator.childNodes[10].childNodes[2]) {
+            experienceGenerator.childNodes[10].childNodes[2].addEventListener('click', () => {
+               experienceGenerator.childNodes[10].remove();
+               sum--;
+               sPreviousEl = '';
+            })
+         }
+      }
+      if (sum === 5) {
+         if (experienceGenerator.childNodes[11].childNodes[2]) {
+            experienceGenerator.childNodes[11].childNodes[2].addEventListener('click', () => {
+               experienceGenerator.childNodes[11].remove();
+               sum--;
+               sPreviousEl = '';
+            })
+         }
+      }
+      if (sum === 6) {
+         if (experienceGenerator.childNodes[12].childNodes[2]) {
+            experienceGenerator.childNodes[12].childNodes[2].addEventListener('click', () => {
+               experienceGenerator.childNodes[12].remove();
+               sum--;
+               sPreviousEl = '';
+            })
+         }
+      }
+      if (sum === 7) {
+         if (experienceGenerator.childNodes[13].childNodes[2]) {
+            experienceGenerator.childNodes[13].childNodes[2].addEventListener('click', () => {
+               experienceGenerator.childNodes[13].remove();
+               sum--;
+               sPreviousEl = '';
+            })
+         }
+      }
+      if (sum === 8) {
+         if (experienceGenerator.childNodes[14].childNodes[2]) {
+            experienceGenerator.childNodes[14].childNodes[2].addEventListener('click', () => {
+               experienceGenerator.childNodes[14].remove();
+               sum--;
+               sPreviousEl = '';
+            })
+         }
+      }
+   }
 }
 
-getSkillsData();
+addSkills.addEventListener('click', addSkillsF);
 
 
 function startQuestionnare() {

@@ -47,8 +47,6 @@
     border-color: #0C0D0E;
 }
 
-
-
 #second-page .skills {
     background-color: #FFFFFF;
     font: inherit;
@@ -65,7 +63,7 @@
 
 #second-page input {
     background-color: #FFFFFF;
-    font: inherit;
+    font: 15px 'Montserrat', sans-serif;
     padding: 0.5rem;
     margin: 2rem 0;
     border: 1px solid #525557;
@@ -74,7 +72,54 @@
     display: block;
     box-sizing: border-box;
     line-height: 1.5em;
+}
 
+#second-page #add-skills {
+    color: #FFFFFF;
+    font-size: 0.8rem;
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    position: relative;
+    left: 19.5rem;
+    padding: 0.5rem 0.8rem;
+    background-color: #FE3B1F;
+    cursor: pointer;
+}
+
+#second-page .skills-experience {
+    padding: 0.8rem 0.8rem;
+    background-color: #FFFFFF;
+    text-align: center;
+    margin: 2rem auto;
+    border: 1px solid #525557;
+    border-color: #0C0D0E;
+}
+
+#second-page .skills-experience p {
+    margin: 0;
+    font: 15px 'Montserrat', sans-serif;
+    display: inline-block;
+    position: relative;
+    right: 9rem;
+    bottom: 5px;
+}
+
+#second-page .skills-experience .second-chiled {
+    margin: 0;
+    position: relative;
+    bottom: 5px;
+    left: -1rem;
+}
+
+
+#second-page .skills-experience .third-chiled {
+    font-size: 2rem;
+    color:#FE3B1F;
+    margin: 0;
+    position: relative;
+    top: 1px;
+    left: 9rem;
+    cursor: pointer;
 }
 
 #second-page footer {
@@ -95,19 +140,6 @@
     margin: 0.5rem;
     padding: 0;
     cursor: pointer;
-}
-
-#second-page #add-skills {
-
-    color: #FFFFFF;
-    font-size: 0.8rem;
-    font-family: 'Montserrat', sans-serif;
-    display: inline-block;
-    position: relative;
-    left: 19.5rem;
-    padding: 0.5rem 0.8rem;
-    background-color: #FE3B1F;
-    text-align: left;
 }
 
 
