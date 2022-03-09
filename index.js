@@ -366,6 +366,8 @@ function addSkillsF() {
 
 addSkills.addEventListener('click', addSkillsF);
 
+// nav control second page
+
 function pageControlTwo(event) {
 
    let el = event.target;
@@ -414,6 +416,59 @@ button[9].addEventListener('click', pageControlTwo)
 
 nextPage[1].addEventListener('click', pageControlTwo);
 arrowRight[1].addEventListener('click', pageControlTwo);
+
+// third page
+
+// nav control third page
+
+function pageControlThree(event) {
+
+   let el = event.target;
+    if (el === button[10]) {
+         pages[1].style.display = 'flex';
+         pages[2].style.display = 'none';
+         pages[3].style.display = 'none';
+         pages[4].style.display = 'none';
+         pages[5].style.display = 'none';
+      }
+      if (el === button[11]) {
+         pages[1].style.display = 'none';
+         pages[2].style.display = 'flex';
+         pages[3].style.display = 'none';
+         pages[4].style.display = 'none';
+         pages[5].style.display = 'none';
+      }
+      if (el === button[13]) {
+         pages[1].style.display = 'none';
+         pages[2].style.display = 'none';
+         pages[3].style.display = 'none';
+         pages[4].style.display = 'flex';
+         pages[5].style.display = 'none';
+      }
+      if (el === button[14]) {
+         pages[1].style.display = 'none';
+         pages[2].style.display = 'none';
+         pages[3].style.display = 'none';
+         pages[4].style.display = 'none';
+         pages[5].style.display = 'block';
+      }
+      if(el === nextPage[2] || el === arrowRight[2]) {
+         pages[3].style.display = 'none';
+         pages[4].style.display = 'flex';
+      }
+}
+
+
+button[10].addEventListener('click', pageControlThree)
+button[11].addEventListener('click', pageControlThree)
+button[13].addEventListener('click', pageControlThree)
+button[14].addEventListener('click', pageControlThree)
+
+// arrow right  third page
+
+
+nextPage[2].addEventListener('click', pageControlThree);
+arrowRight[2].addEventListener('click', pageControlThree);
 
 // last page
 

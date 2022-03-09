@@ -2,7 +2,7 @@
 
 #third-page {
     min-height: 100vh;
-    display: none;
+    display: flex;
 }
 
 #third-page #left-side {
