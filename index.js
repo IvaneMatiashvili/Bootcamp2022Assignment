@@ -35,6 +35,9 @@ const vaccinated = document.querySelectorAll('.vaccinated');
 
 const devtalk = document.querySelectorAll('.devtalk');
 const what = document.querySelectorAll('.what');
+const foErrorOne = document.querySelectorAll('.fo-error--one');
+const foTextarea = document.getElementById('usermessage-devtalk');
+const foUserMessage = document.getElementById('fo-usermessage')
 
 //last page vars
 
@@ -173,7 +176,7 @@ function pageControlOne(event) {
          pages[4].style.display = 'none';
          pages[5].style.display = 'block';
       }
-      if(el === nextPage[0] || el === arrowRight[0]) {
+      if (el === nextPage[0] || el === arrowRight[0]) {
          pages[1].style.display = 'none';
          pages[2].style.display = 'flex';
       }
@@ -382,38 +385,38 @@ addSkills.addEventListener('click', addSkillsF);
 function pageControlTwo(event) {
 
    let el = event.target;
-    if (el === button[5]) {
-         pages[1].style.display = 'flex';
-         pages[2].style.display = 'none';
-         pages[3].style.display = 'none';
-         pages[4].style.display = 'none';
-         pages[5].style.display = 'none';
-      }
-      if (el === button[7]) {
-         pages[1].style.display = 'none';
-         pages[2].style.display = 'none';
-         pages[3].style.display = 'flex';
-         pages[4].style.display = 'none';
-         pages[5].style.display = 'none';
-      }
-      if (el === button[8]) {
-         pages[1].style.display = 'none';
-         pages[2].style.display = 'none';
-         pages[3].style.display = 'none';
-         pages[4].style.display = 'flex';
-         pages[5].style.display = 'none';
-      }
-      if (el === button[9]) {
-         pages[1].style.display = 'none';
-         pages[2].style.display = 'none';
-         pages[3].style.display = 'none';
-         pages[4].style.display = 'none';
-         pages[5].style.display = 'block';
-      }
-      if(el === nextPage[1] || el === arrowRight[1]) {
-         pages[2].style.display = 'none';
-         pages[3].style.display = 'flex';
-      }
+   if (el === button[5]) {
+      pages[1].style.display = 'flex';
+      pages[2].style.display = 'none';
+      pages[3].style.display = 'none';
+      pages[4].style.display = 'none';
+      pages[5].style.display = 'none';
+   }
+   if (el === button[7]) {
+      pages[1].style.display = 'none';
+      pages[2].style.display = 'none';
+      pages[3].style.display = 'flex';
+      pages[4].style.display = 'none';
+      pages[5].style.display = 'none';
+   }
+   if (el === button[8]) {
+      pages[1].style.display = 'none';
+      pages[2].style.display = 'none';
+      pages[3].style.display = 'none';
+      pages[4].style.display = 'flex';
+      pages[5].style.display = 'none';
+   }
+   if (el === button[9]) {
+      pages[1].style.display = 'none';
+      pages[2].style.display = 'none';
+      pages[3].style.display = 'none';
+      pages[4].style.display = 'none';
+      pages[5].style.display = 'block';
+   }
+   if (el === nextPage[1] || el === arrowRight[1]) {
+      pages[2].style.display = 'none';
+      pages[3].style.display = 'flex';
+   }
 }
 
 
@@ -432,34 +435,40 @@ arrowRight[1].addEventListener('click', pageControlTwo);
 
 let covidValue;
 let vaccinatedValue;
+let covidArr = [];
+let vaccinatedArr = [];
 
-function covidCheck(event) { 
+function covidCheck(event) {
    let el = event.target;
-   if(el === covid[0]){
-       covidValue = 1;
+   if (el === covid[0]) {
+      covidValue = 1;
    }
-   if(el === covid[1]){
-       covidValue = 0;
+   if (el === covid[1]) {
+      covidValue = 0;
    }
 
-if(covidValue === 1) {
-   when[0].style.display = 'block'
-}
-if(covidValue === 0) {
-   when[0].style.display = 'none'
-}
-   if(el === vaccinated[0]){
-       vaccinatedValue = 1;
+   if (covidValue === 1) {
+      when[0].style.display = 'block'
    }
-   if(el === vaccinated[1]){
-       vaccinatedValue = 0;
+   if (covidValue === 0) {
+      when[0].style.display = 'none'
    }
-if(vaccinatedValue === 1) {
-   when[1].style.display = 'block'
-}
-if(vaccinatedValue === 0) {
-   when[1].style.display = 'none'
-}
+
+   covidArr.push(covidValue);
+
+   if (el === vaccinated[0]) {
+      vaccinatedValue = 1;
+   }
+   if (el === vaccinated[1]) {
+      vaccinatedValue = 0;
+   }
+   if (vaccinatedValue === 1) {
+      when[1].style.display = 'block'
+   }
+   if (vaccinatedValue === 0) {
+      when[1].style.display = 'none'
+   }
+   vaccinatedArr.push(vaccinatedValue);
 }
 
 covid[0].addEventListener('click', covidCheck);
@@ -473,38 +482,38 @@ vaccinated[1].addEventListener('click', covidCheck);
 function pageControlThree(event) {
 
    let el = event.target;
-    if (el === button[10]) {
-         pages[1].style.display = 'flex';
-         pages[2].style.display = 'none';
-         pages[3].style.display = 'none';
-         pages[4].style.display = 'none';
-         pages[5].style.display = 'none';
-      }
-      if (el === button[11]) {
-         pages[1].style.display = 'none';
-         pages[2].style.display = 'flex';
-         pages[3].style.display = 'none';
-         pages[4].style.display = 'none';
-         pages[5].style.display = 'none';
-      }
-      if (el === button[13]) {
-         pages[1].style.display = 'none';
-         pages[2].style.display = 'none';
-         pages[3].style.display = 'none';
-         pages[4].style.display = 'flex';
-         pages[5].style.display = 'none';
-      }
-      if (el === button[14]) {
-         pages[1].style.display = 'none';
-         pages[2].style.display = 'none';
-         pages[3].style.display = 'none';
-         pages[4].style.display = 'none';
-         pages[5].style.display = 'block';
-      }
-      if(el === nextPage[2] || el === arrowRight[2]) {
-         pages[3].style.display = 'none';
-         pages[4].style.display = 'flex';
-      }
+   if (el === button[10]) {
+      pages[1].style.display = 'flex';
+      pages[2].style.display = 'none';
+      pages[3].style.display = 'none';
+      pages[4].style.display = 'none';
+      pages[5].style.display = 'none';
+   }
+   if (el === button[11]) {
+      pages[1].style.display = 'none';
+      pages[2].style.display = 'flex';
+      pages[3].style.display = 'none';
+      pages[4].style.display = 'none';
+      pages[5].style.display = 'none';
+   }
+   if (el === button[13]) {
+      pages[1].style.display = 'none';
+      pages[2].style.display = 'none';
+      pages[3].style.display = 'none';
+      pages[4].style.display = 'flex';
+      pages[5].style.display = 'none';
+   }
+   if (el === button[14]) {
+      pages[1].style.display = 'none';
+      pages[2].style.display = 'none';
+      pages[3].style.display = 'none';
+      pages[4].style.display = 'none';
+      pages[5].style.display = 'block';
+   }
+   if (el === nextPage[2] || el === arrowRight[2]) {
+      pages[3].style.display = 'none';
+      pages[4].style.display = 'flex';
+   }
 }
 
 
@@ -521,65 +530,119 @@ arrowRight[2].addEventListener('click', pageControlThree);
 
 // fourth page
 
-let devtalkValue ;
+let devtalkValue;
+let devtalkArr = [];
 
-function covidCheck(event) { 
+function covidCheck(event) {
    let el = event.target;
-   if(el === devtalk[0]){
-       devtalkValue = 1;
+   if (el === devtalk[0]) {
+      devtalkValue = true;
    }
-   if(el === devtalk[1]){
-       devtalkValue = 0;
+   if (el === devtalk[1]) {
+      devtalkValue = false;
    }
 
-if(devtalkValue === 1) {
-   what[0].style.display = 'block'
-}
-if(devtalkValue === 0) {
-   what[0].style.display = 'none'
-}
+   if (devtalkValue === true) {
+      what[0].style.display = 'block'
+   }
+   if (devtalkValue === false) {
+      what[0].style.display = 'none'
+   }
+   devtalkArr.push(devtalkValue);
+
+   if (devtalkArr[devtalkArr.length - 1] !== undefined) foErrorOne[0].style.display = 'none';
 }
 
 devtalk[0].addEventListener('click', covidCheck);
 devtalk[1].addEventListener('click', covidCheck);
+
+let foTextareaValue;
+let foTextareaArr = [];
+let foUserMessageArr = [];
+
+
+foTextarea.addEventListener('input', () => {
+   if (foTextarea.value === '') {
+      foErrorOne[1].style.display = 'block';
+      foTextarea.value = '';
+   }
+   if (foTextarea.value !== '') foErrorOne[1].style.display = 'none';
+   foTextareaArr.push(foTextarea.value);
+})
+
+
+foUserMessage.addEventListener('input', () => {
+   if (foUserMessage.value === '') foErrorOne[2].style.display = 'block', foUserMessage.value = '';
+   if (foUserMessage.value !== '') foErrorOne[2].style.display = 'none';
+   console.log(foUserMessage.value);
+   foUserMessageArr.push(foUserMessage.value);
+})
 
 // nav control fourth page
 
 function pageControlFour(event) {
 
    let el = event.target;
-    if (el === button[15]) {
-         pages[1].style.display = 'flex';
-         pages[2].style.display = 'none';
-         pages[3].style.display = 'none';
-         pages[4].style.display = 'none';
-         pages[5].style.display = 'none';
+
+   if (foTextarea.value !== '') foErrorOne[1].style.display = 'none';
+
+   if (el === button[15]) {
+      pages[1].style.display = 'flex';
+      pages[2].style.display = 'none';
+      pages[3].style.display = 'none';
+      pages[4].style.display = 'none';
+      pages[5].style.display = 'none';
+   }
+   if (el === button[16]) {
+      pages[1].style.display = 'none';
+      pages[2].style.display = 'flex';
+      pages[3].style.display = 'none';
+      pages[4].style.display = 'none';
+      pages[5].style.display = 'none';
+   }
+   if (el === button[17]) {
+      pages[1].style.display = 'none';
+      pages[2].style.display = 'none';
+      pages[3].style.display = 'flex';
+      pages[4].style.display = 'none';
+      pages[5].style.display = 'none';
+   }
+
+   if (devtalkArr[devtalkArr.length - 1] === true) {
+      if (foTextareaArr[foTextareaArr.length - 1] !== '' && foTextareaArr[foTextareaArr.length - 1] !== undefined) {
+         if (foUserMessageArr[foUserMessageArr.length - 1] !== '' && foUserMessageArr[foUserMessageArr.length - 1] !== undefined) {
+            if (el === button[19]) {
+               pages[1].style.display = 'none';
+               pages[2].style.display = 'none';
+               pages[3].style.display = 'none';
+               pages[4].style.display = 'none';
+               pages[5].style.display = 'block';
+            }
+            if (el === nextPage[3] || el === arrowRight[3]) {
+               pages[4].style.display = 'none';
+               pages[5].style.display = 'block';
+            }
+         }
+
       }
-      if (el === button[16]) {
-         pages[1].style.display = 'none';
-         pages[2].style.display = 'flex';
-         pages[3].style.display = 'none';
-         pages[4].style.display = 'none';
-         pages[5].style.display = 'none';
+   }
+
+   if (foUserMessageArr[foUserMessageArr.length - 1] !== '' && foUserMessageArr[foUserMessageArr.length - 1] !== undefined) {
+      if (devtalkArr[devtalkArr.length - 1] === false) {
+
+         if (el === button[19]) {
+            pages[1].style.display = 'none';
+            pages[2].style.display = 'none';
+            pages[3].style.display = 'none';
+            pages[4].style.display = 'none';
+            pages[5].style.display = 'block';
+         }
+         if (el === nextPage[3] || el === arrowRight[3]) {
+            pages[4].style.display = 'none';
+            pages[5].style.display = 'block';
+         }
       }
-      if (el === button[17]) {
-         pages[1].style.display = 'none';
-         pages[2].style.display = 'none';
-         pages[3].style.display = 'flex';
-         pages[4].style.display = 'none';
-         pages[5].style.display = 'none';
-      }
-      if (el === button[19]) {
-         pages[1].style.display = 'none';
-         pages[2].style.display = 'none';
-         pages[3].style.display = 'none';
-         pages[4].style.display = 'none';
-         pages[5].style.display = 'block';
-      }
-      if(el === nextPage[3] || el === arrowRight[3]) {
-         pages[4].style.display = 'none';
-         pages[5].style.display = 'block';
-      }
+   }
 }
 
 

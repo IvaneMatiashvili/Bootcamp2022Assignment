@@ -128,6 +128,16 @@
     margin-top: 5rem;
 }
 
+
+#fourth-page .fo-error--one {
+    margin-top: -10px;
+    font-size: 15px;
+    height: 13px;
+    color: #ff3860;
+    text-align: left;
+    display: block;
+}
+
 #fourth-page footer {
     text-align: center;
     align-items: center;
