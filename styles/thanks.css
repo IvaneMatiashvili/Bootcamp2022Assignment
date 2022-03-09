@@ -1,0 +1,17 @@
+#thanks {
+    height: 100vh;
+    width: 100%;
+    background-color: #0C0D0E;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+#thanks h1 {
+    font-family:'Rowdies', sans-serif;
+    color: #FE3B1F;
+    font-weight: 400;
+    font-size: 70px;
+    margin: auto 0; 
+}
+
