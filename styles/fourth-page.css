@@ -22,7 +22,7 @@
 
 #fourth-page h1 {
     text-align: center;
-    margin: 6rem 7rem 4rem 7rem;
+    margin: 6rem 7rem 9rem 7rem;
     color: #FE3B1F;
     font-weight: 400;
     font-size: 4.3rem;
@@ -47,7 +47,7 @@
     border-color: #0C0D0E;
 }
 
-#fourth-page input {
+#fourth-page input,textarea {
     font: 15px 'Montserrat', sans-serif;
     padding: 0.5rem;
     margin: 2rem 0;
@@ -58,12 +58,77 @@
     box-sizing: border-box;
 }
 
+#fourth-page textarea {
+    resize: none;
+    height: 100%;
+}
+
+#fourth-page .what {
+    margin-top: 4rem;
+}
 #fourth-page input:placeholder-shown {
+    padding-left: 2rem;
+}
+
+
+#fourth-page textarea:placeholder-shown {
     padding-left: 2rem;
 }
 
 #fourth-page input:focus {
     padding-left: 2rem;
+}
+
+
+#fourth-page textarea:focus {
+    padding-left: 2rem;
+}
+
+#fourth-page input[type=date] {
+  text-align: right;
+}
+
+#fourth-page input[type="date"]:before {
+  content: attr(placeholder) !important;
+  margin: 0 1.5rem;
+  color: #525557;
+}
+
+#fourth input[type="date"]:focus:before {
+  content: '' !important;
+}
+
+
+#fourth-page .form-control-inline {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -1.9rem;
+    padding: 0;
+    align-items: center;
+}
+
+.fourth-page__question {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+
+#fourth-page label {
+    font: 15px 'Montserrat', sans-serif;
+    margin: 0;
+    margin-left: 0.5rem;
+}
+
+#fourth-page .form-control-inline input {
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+#fourth-page #second-radio {
+    margin-top: 5rem;
 }
 
 #fourth-page footer {

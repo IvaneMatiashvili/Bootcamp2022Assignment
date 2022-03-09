@@ -184,7 +184,7 @@
                     <ul>
                         <li>
                             <ul>
-                                <p id="third-page__question">how would you prefer to work?</p>
+                                <p class="third-page__question">how would you prefer to work?</p>
                                 <li class="form-control-inline">
                                     <input type="radio" name="verify" id="verify-text-message" value="text-message"
                                         required>
@@ -210,7 +210,7 @@
                         </li>
                         <li>
                             <ul id="second-radio">
-                                <p id="third-page__question">Did you contact covid 19? :(</p>
+                                <p class="third-page__question">Did you contact covid 19? :(</p>
                                 <li class="form-control-inline">
                                     <input type="radio" name="verify" id="verify-text-message" value="text-message"
                                         required>
@@ -227,13 +227,13 @@
                                 </li>
                             </ul>
                         </li>
-                        <li id="when">
-                            <p id="third-page__question">When?</p>
+                        <li class="when">
+                            <p class="third-page__question">When?</p>
                             <input type="date" name="covid-date" id="covid-date" required placeholder="Date" />
                         </li>
                         <li>
                             <ul id="second-radio">
-                                <p id="third-page__question">Have you been vaccinated?</p>
+                                <p class="third-page__question">Have you been vaccinated?</p>
                                 <li class="form-control-inline">
                                     <input type="radio" name="verify" id="verify-text-message" value="text-message"
                                         required>
@@ -250,8 +250,8 @@
                                 </li>
                             </ul>
                         </li>
-                        <li id="when">
-                            <p id="third-page__question">When did you get your last covid vaccine?</p>
+                        <li class="when">
+                            <p class="third-page__question">When did you get your last covid vaccine?</p>
                             <input type="date" name="covid-date" id="covid-date" required placeholder="Date" />
                         </li>
                     </ul>
@@ -310,19 +310,34 @@
                 <form>
                     <ul>
                         <li>
-                            <input type="text" id="first-rname" name="first-name" placeholder="First name" required>
+                            <ul>
+                                <p class="fourth-page__question">Would you attend Devtalks and maybe also organize your
+                                    own?
+                                </p>
+                                <li class="form-control-inline">
+                                    <input type="radio" name="verify" id="verify-text-message" value="text-message"
+                                        required>
+                                    <label for="verify-text-message">
+                                        Yes
+                                    </label>
+                                </li>
+                                <li class="form-control-inline">
+                                    <input type="radio" name="verify" id="verify-text-message" value="text-message"
+                                        required>
+                                    <label for="verify-text-message">
+                                        NO
+                                    </label>
+                                </li>
+                            </ul>
                         </li>
-                        <li>
-                            <input type="text" id="last-name" name="last-name" placeholder="Last name" required>
+                        <li class="what">
+                            <p class="fourth-page__question"> What would you speak about at Devtalk?</p>
+                            <textarea id="usermessage-devtalk" name="user-message" rows="5" placeholder="I would..."></textarea>
                         </li>
-                        <li>
-                            <input type="email" id="email" name="email" placeholder="E Mail" required>
+                        <li class="what">
+                            <p class="fourth-page__question"> Tell us something special</p>
+                            <textarea id="usermessage" name="user-message" rows="5" placeholder="I..."></textarea>
                         </li>
-                        <li>
-                            <input type="tel" id="phone" name="phone" placeholder="+995 5__ __ __ __" required
-                                minlength="5">
-                        </li>
-                    </ul>
                 </form>
             </main>
             <footer>
