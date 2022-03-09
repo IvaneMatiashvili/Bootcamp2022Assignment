@@ -8,7 +8,7 @@
 
 #fourth-page {
     min-height: 100vh;
-    display: none;
+    display: flex;
 }
 
 #fourth-page #left-side {
@@ -111,7 +111,7 @@
 
 /* arrow  style */
 
-#fourth-page #go-back{
+#fourth-page #go-back {
     display: flex;
     text-align: center;
     padding: 0.3rem 0.3rem 0.3rem 0.4rem;
@@ -121,7 +121,7 @@
     opacity: 1;
 }
 
-#fourth-page #next-page{
+#fourth-page #next-page {
     display: flex;
     text-align: center;
     padding: 0.3rem 0.4rem 0.3rem 0.3rem;
@@ -146,12 +146,40 @@
 }
 
 #fourth-page .right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
 }
 
 
 #fourth-page #right-side {
     width: 50vw;
     background: radial-gradient(50% 50% at 50% 50%, #0C0D0E 0%, #151718 73.44%);
+}
+
+#fourth-page #right-side header {
+
+    font-family: 'Rowdies', sans-serif;
+    text-align: center;
+}
+
+#fourth-page #right-side h2 {
+    margin-top: 10rem;
+    font-weight: 400;
+    font-size: 64px;
+    color: #FE3B1F;
+}
+
+#fourth-page #right-side main {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 7rem;
+}
+
+#fourth-page #right-side p {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 24px;
 }

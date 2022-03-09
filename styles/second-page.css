@@ -212,3 +212,31 @@
     width: 50vw;
     background: radial-gradient(50% 50% at 50% 50%, #0C0D0E 0%, #151718 73.44%);
 }
+
+#second-page #right-side header {
+
+    font-family: 'Rowdies', sans-serif;
+    text-align: center;
+}
+
+#second-page #right-side h2 {
+    margin-top: 10rem;
+    font-weight: 400;
+    font-size: 64px;
+    color: #FE3B1F;
+}
+
+#second-page #right-side main {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 7rem;
+}
+
+#second-page #right-side p {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 24px;
+}
