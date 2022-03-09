@@ -2,7 +2,7 @@
 
 #third-page {
     min-height: 100vh;
-    display: none;
+    display: flex;
 }
 
 #third-page #left-side {
@@ -82,18 +82,26 @@
 
 
 #third-page .form-control-inline {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: -1.9rem;
-    padding: 0;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
+
+#third-page .input-control {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+    margin-top: -1rem;
+}
+
 
 .third-page__question {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     text-align: left;
     margin-bottom: 2rem;
+    margin-top: 4rem;
+
 }
 
 
@@ -111,6 +119,14 @@
 
 #third-page #second-radio {
     margin-top: 5rem;
+}
+
+#third-page .th-error--one {
+    font-size: 15px;
+    height: 13px;
+    color: #ff3860;
+    text-align: left;
+    display: block;
 }
 
 #third-page footer {

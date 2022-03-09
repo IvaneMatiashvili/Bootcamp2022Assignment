@@ -183,77 +183,80 @@
             <main>
                 <form>
                     <ul>
-                        <li>
-                            <ul>
-                                <p class="third-page__question">how would you prefer to work?</p>
-                                <li class="form-control-inline">
-                                    <input type="radio" name="verify" id="verify-text-message" value="text-message"
-                                        required>
-                                    <label for="verify-text-message">
-                                        From Sairme Office
-                                    </label>
-                                </li>
-                                <li class="form-control-inline">
-                                    <input type="radio" name="verify" id="verify-text-message" value="text-message"
-                                        required>
-                                    <label for="verify-text-message">
-                                        From Home
-                                    </label>
-                                </li>
-                                <li class="form-control-inline">
-                                    <input type="radio" name="verify" id="verify-text-message" value="text-message"
-                                        required>
-                                    <label for="verify-text-message">
-                                        Hybrid
-                                    </label>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul id="second-radio">
-                                <p class="third-page__question">Did you contact covid 19? :(</p>
-                                <li class="form-control-inline">
-                                    <input type="radio" name="verify" class="covid" value="text-message"
-                                        required>
-                                    <label for="covid">
-                                        Yes
-                                    </label>
-                                </li>
-                                <li class="form-control-inline">
-                                    <input type="radio" name="verify" class="covid" value="text-message"
-                                        required>
-                                    <label for="covid">
-                                        No
-                                    </label>
-                                </li>
-                            </ul>
-                        </li>
+                        <ul class="form-control-inline">
+
+                            <p class="third-page__question">
+                                how would you prefer to work?
+                            </p>
+                            <li class="input-control">
+                                <input type="radio" name="location" id="sairme" class="work-location" value="home"
+                                    required>
+                                <label for="sairme">From Sairme Office</label>
+                            </li>
+
+                            <li class="input-control">
+                                <input type="radio" name="location" id="home" class="work-location" value="home"
+                                    required>
+                                <label for="home">From Home</label>
+                            </li>
+                            <li class="input-control">
+                                <input type="radio" name="location" id="hybrid" class="work-location" value="hybrid"
+                                    required>
+                                <label for="hybrid">Hybrid</label>
+                            </li>
+                            <div class="th-error--one">answer is required</div>
+                        </ul>
+                        <ul class="form-control-inline">
+
+                            <p class="third-page__question">
+                                Did you contact covid 19? :(
+                            </p>
+                            <li class="input-control">
+                                <input type="radio" name="covid" id="covid-yes" class="covid" value="covid-yes"
+                                    required>
+                                <label for="covid-yes">Yes</label>
+                            </li>
+
+                            <li class="input-control">
+                                <input type="radio" name="covid" id="covid-no" class="covid" value="covid-no" required>
+                                <label for="covid-no">No</label>
+                            </li>
+                            <div class="th-error--one">answer is required</div>
+                        </ul>
                         <li class="when">
-                            <p class="third-page__question">When?</p>
-                            <input type="date" name="covid-date" id="covid-date" required placeholder="Date" />
+                            <p class="third-page__question">
+                                When?
+                            </p>
+                            <input type="date" id="covid-date" name="covid-date" placeholder="Date" required>
+                            <div class="th-error--one">answer is required</div>
                         </li>
-                        <li>
-                            <ul id="second-radio">
-                                <p class="third-page__question">Have you been vaccinated?</p>
-                                <li class="form-control-inline">
-                                    <input type="radio" name="verify" class="vaccinated" value="text-message"
-                                        required>
-                                    <label for="verify-text-message">
-                                        Yes
-                                    </label>
-                                </li>
-                                <li class="form-control-inline">
-                                    <input type="radio" name="verify" class="vaccinated" value="text-message"
-                                        required>
-                                    <label for="verify-text-message">
-                                        No
-                                    </label>
-                                </li>
-                            </ul>
-                        </li>
+
+                        <ul class="form-control-inline">
+
+                            <p class="third-page__question">
+                                Have you been vaccinated?
+                            </p>
+                            <li class="input-control">
+                                <input type="radio" name="vaccinated" id="vaccinated-yes" class="vaccinated"
+                                    value="vaccinated-yes" required>
+                                <label for="vaccinated-yes">Yes</label>
+                            </li>
+
+                            <li class="input-control">
+                                <input type="radio" name="vaccinated" id="vaccinated-no" class="vaccinated"
+                                    value="vaccinated-no" required>
+                                <label for="vaccinated-no">No</label>
+                            </li>
+
+                            <div class="th-error--one">answer is required</div>
+
+                        </ul>
                         <li class="when">
-                            <p class="third-page__question">When did you get your last covid vaccine?</p>
-                            <input type="date" name="covid-date" id="covid-date" required placeholder="Date" />
+                            <p class="third-page__question">
+                                When did you get your last covid vaccine?
+                            </p>
+                            <input type="date" id="vaccinated-date" name="vaccinated-date" placeholder="Date" required>
+                            <div class="th-error--one">answer is required</div>
                         </li>
                     </ul>
                 </form>
@@ -316,15 +319,13 @@
                                     own?
                                 </p>
                                 <li class="form-control-inline">
-                                    <input type="radio" name="verify" class="devtalk" value="text-message"
-                                        required>
+                                    <input type="radio" name="verify" class="devtalk" value="text-message" required>
                                     <label for="verify-text-message">
                                         Yes
                                     </label>
                                 </li>
                                 <li class="form-control-inline">
-                                    <input type="radio" name="verify" class="devtalk" value="text-message"
-                                        required>
+                                    <input type="radio" name="verify" class="devtalk" value="text-message" required>
                                     <label for="verify-text-message">
                                         NO
                                     </label>
@@ -400,9 +401,9 @@
 
     </section>
     <section id="thanks" class='pages'>
-            <h1>
-                Thanks for Joining 😊
-            </h1>
+        <h1>
+            Thanks for Joining 😊
+        </h1>
     </section>
 </body>
 

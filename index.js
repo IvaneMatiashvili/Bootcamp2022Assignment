@@ -30,6 +30,10 @@ const skills = document.querySelector('.skills');
 const when = document.querySelectorAll('.when');
 const covid = document.querySelectorAll('.covid');
 const vaccinated = document.querySelectorAll('.vaccinated');
+const workLocation = document.querySelectorAll('.work-location');
+const covidDate = document.getElementById('covid-date');
+const vaccinatedDate = document.getElementById('vaccinated-date');
+const thErrorOne = document.querySelectorAll('.th-error--one');
 
 // fourth-page
 
@@ -38,6 +42,7 @@ const what = document.querySelectorAll('.what');
 const foErrorOne = document.querySelectorAll('.fo-error--one');
 const foTextarea = document.getElementById('usermessage-devtalk');
 const foUserMessage = document.getElementById('fo-usermessage')
+
 
 //last page vars
 
@@ -433,48 +438,104 @@ arrowRight[1].addEventListener('click', pageControlTwo);
 
 // third page
 
+let workLocationValue;
 let covidValue;
 let vaccinatedValue;
+
 let covidArr = [];
 let vaccinatedArr = [];
+let workLocationArr = [];
 
-function covidCheck(event) {
+function covidCheckK(event) {
    let el = event.target;
+
+   if (el === workLocation[0]) {
+      workLocation = 'From Sairme Office';
+      thErrorOne[0].style.display = 'none';
+   }
+   if (el === workLocation[1]) {
+      workLocationValue = 'From Home';
+      thErrorOne[0].style.display = 'none';
+   }
+   if (el === workLocation[2]) {
+      workLocationValue = 'Hybrid';
+      thErrorOne[0].style.display = 'none';
+   }
+   workLocationArr.push(workLocationValue);
+
    if (el === covid[0]) {
-      covidValue = 1;
+      covidValue = true;
+      thErrorOne[1].style.display = 'none';
    }
    if (el === covid[1]) {
-      covidValue = 0;
+      covidValue = false;
+      thErrorOne[1].style.display = 'none';
    }
 
-   if (covidValue === 1) {
-      when[0].style.display = 'block'
+   if (covidValue === true) {
+      when[0].style.display = 'block';
    }
-   if (covidValue === 0) {
-      when[0].style.display = 'none'
+   if (covidValue === false) {
+      when[0].style.display = 'none';
    }
 
    covidArr.push(covidValue);
 
    if (el === vaccinated[0]) {
-      vaccinatedValue = 1;
+      vaccinatedValue = true;
+      thErrorOne[3].style.display = 'none';
    }
    if (el === vaccinated[1]) {
-      vaccinatedValue = 0;
+      vaccinatedValue = false;
+      thErrorOne[3].style.display = 'none';
    }
-   if (vaccinatedValue === 1) {
-      when[1].style.display = 'block'
+
+   if (vaccinatedValue === true) {
+      when[1].style.display = 'block';
    }
-   if (vaccinatedValue === 0) {
-      when[1].style.display = 'none'
+   if (vaccinatedValue === false) {
+      when[1].style.display = 'none';
    }
    vaccinatedArr.push(vaccinatedValue);
 }
 
-covid[0].addEventListener('click', covidCheck);
-covid[1].addEventListener('click', covidCheck);
-vaccinated[0].addEventListener('click', covidCheck);
-vaccinated[1].addEventListener('click', covidCheck);
+
+workLocation[0].addEventListener('click', covidCheckK);
+workLocation[1].addEventListener('click', covidCheckK);
+
+covid[0].addEventListener('click', covidCheckK);
+covid[1].addEventListener('click', covidCheckK);
+
+vaccinated[0].addEventListener('click', covidCheckK);
+vaccinated[1].addEventListener('click', covidCheckK);
+
+//date inputlisteners
+
+let covidDateValue;
+let vaccinatedDateValue;
+
+let covidDateArr = [];
+let vaccinatedDateArr = [];
+
+function dateInputListener(event) {
+
+   let el = event.target;
+
+   if (el === covidDate) {
+      covidDateValue = covidDate.value;
+      covidDateArr.push(covidDateValue);
+      thErrorOne[2].style.display = 'none';
+   }
+
+   if (el === vaccinatedDate) {
+      vaccinatedDateValue = vaccinatedDate.value;
+      vaccinatedDateArr.push(vaccinatedDateValue);
+      thErrorOne[4].style.display = 'none';
+   }
+}
+
+covidDate.addEventListener('input', dateInputListener);
+vaccinatedDate.addEventListener('input', dateInputListener);
 
 
 // nav control third page
@@ -496,23 +557,105 @@ function pageControlThree(event) {
       pages[4].style.display = 'none';
       pages[5].style.display = 'none';
    }
-   if (el === button[13]) {
-      pages[1].style.display = 'none';
-      pages[2].style.display = 'none';
-      pages[3].style.display = 'none';
-      pages[4].style.display = 'flex';
-      pages[5].style.display = 'none';
-   }
-   if (el === button[14]) {
-      pages[1].style.display = 'none';
-      pages[2].style.display = 'none';
-      pages[3].style.display = 'none';
-      pages[4].style.display = 'none';
-      pages[5].style.display = 'block';
-   }
-   if (el === nextPage[2] || el === arrowRight[2]) {
-      pages[3].style.display = 'none';
-      pages[4].style.display = 'flex';
+
+
+
+   if (workLocationArr[workLocationArr.length - 1] !== undefined) {
+      if (covidArr[covidArr.length - 1] === false && vaccinatedArr[vaccinatedArr.length - 1] === false) {
+         if (el === button[13]) {
+            pages[1].style.display = 'none';
+            pages[2].style.display = 'none';
+            pages[3].style.display = 'none';
+            pages[4].style.display = 'flex';
+            pages[5].style.display = 'none';
+         }
+         if (el === button[14]) {
+            pages[1].style.display = 'none';
+            pages[2].style.display = 'none';
+            pages[3].style.display = 'none';
+            pages[4].style.display = 'none';
+            pages[5].style.display = 'block';
+         }
+         if (el === nextPage[2] || el === arrowRight[2]) {
+            pages[3].style.display = 'none';
+            pages[4].style.display = 'flex';
+         }
+      }
+      if (covidArr[covidArr.length - 1] === true && vaccinatedArr[vaccinatedArr.length - 1] === false) {
+
+         if (covidDateArr[covidDateArr.length - 1] !== '' && covidDateArr[covidDateArr.length - 1] !== undefined) {
+            console.log(covidDateArr[covidDateArr.length - 1]);
+
+            if (el === button[13]) {
+               pages[1].style.display = 'none';
+               pages[2].style.display = 'none';
+               pages[3].style.display = 'none';
+               pages[4].style.display = 'flex';
+               pages[5].style.display = 'none';
+            }
+            if (el === button[14]) {
+               pages[1].style.display = 'none';
+               pages[2].style.display = 'none';
+               pages[3].style.display = 'none';
+               pages[4].style.display = 'none';
+               pages[5].style.display = 'block';
+            }
+            if (el === nextPage[2] || el === arrowRight[2]) {
+               pages[3].style.display = 'none';
+               pages[4].style.display = 'flex';
+            }
+         }
+      }
+
+      if (covidArr[covidArr.length - 1] === false && vaccinatedArr[vaccinatedArr.length - 1] === true) {
+
+         if (vaccinatedDateArr[vaccinatedDateArr.length - 1] !== '' && vaccinatedDateArr[vaccinatedDateArr.length - 1] !== undefined) {
+
+            if (el === button[13]) {
+               pages[1].style.display = 'none';
+               pages[2].style.display = 'none';
+               pages[3].style.display = 'none';
+               pages[4].style.display = 'flex';
+               pages[5].style.display = 'none';
+            }
+            if (el === button[14]) {
+               pages[1].style.display = 'none';
+               pages[2].style.display = 'none';
+               pages[3].style.display = 'none';
+               pages[4].style.display = 'none';
+               pages[5].style.display = 'block';
+            }
+            if (el === nextPage[2] || el === arrowRight[2]) {
+               pages[3].style.display = 'none';
+               pages[4].style.display = 'flex';
+            }
+         }
+      }
+      if (covidArr[covidArr.length - 1] === true && vaccinatedArr[vaccinatedArr.length - 1] === true) {
+
+         if (vaccinatedDateArr[vaccinatedDateArr.length - 1] !== '' && vaccinatedDateArr[vaccinatedDateArr.length - 1] !== undefined) {
+            if (vaccinatedDateArr[vaccinatedDateArr.length - 1] !== '' && vaccinatedDateArr[vaccinatedDateArr.length - 1] !== undefined) {
+               if (el === button[13]) {
+                  pages[1].style.display = 'none';
+                  pages[2].style.display = 'none';
+                  pages[3].style.display = 'none';
+                  pages[4].style.display = 'flex';
+                  pages[5].style.display = 'none';
+               }
+               if (el === button[14]) {
+                  pages[1].style.display = 'none';
+                  pages[2].style.display = 'none';
+                  pages[3].style.display = 'none';
+                  pages[4].style.display = 'none';
+                  pages[5].style.display = 'block';
+               }
+               if (el === nextPage[2] || el === arrowRight[2]) {
+                  pages[3].style.display = 'none';
+                  pages[4].style.display = 'flex';
+               }
+            }
+         }
+      }
    }
 }
 
@@ -667,160 +810,3 @@ submit.addEventListener('click', () => {
       pages[0].style.display = 'block';
    }, 3000)
 })
-
-
-/* function pageControlThree() {
-
-   let inputValue = firstName.value;
-   resultArr.push(inputValue);
-
-   if (inputValue === '') {
-      firstName.style.borderColor = '#ff3860';
-      fErrorOne.style.display = 'block';
-      fErrorTwo.style.display = 'none';
-   } else if (inputValue.length < 2) {
-      fErrorOne.style.display = 'none';
-      fErrorTwo.style.display = 'block';
-      firstName.style.borderColor = '#ff3860';
-   } else {
-      fErrorOne.style.display = 'none';
-      fErrorTwo.style.display = 'none';
-      firstName.style.borderColor = '#525557';
-      pages[1].style.display = 'none';
-      pages[2].style.display = 'none';
-      pages[3].style.display = 'flex';
-      pages[4].style.display = 'none';
-      pages[5].style.display = 'none';
-   }
-}
-
-button[2].addEventListener('click', pageControlThree);
-
-
-function pageControlFour() {
-
-   let inputValue = firstName.value;
-   resultArr.push(inputValue);
-
-   if (inputValue === '') {
-      firstName.style.borderColor = '#ff3860';
-      fErrorOne.style.display = 'block';
-      fErrorTwo.style.display = 'none';
-   } else if (inputValue.length < 2) {
-      fErrorOne.style.display = 'none';
-      fErrorTwo.style.display = 'block';
-      firstName.style.borderColor = '#ff3860';
-   } else {
-      fErrorOne.style.display = 'none';
-      fErrorTwo.style.display = 'none';
-      firstName.style.borderColor = '#525557';
-
-      pages[1].style.display = 'none';
-      pages[2].style.display = 'none';
-      pages[3].style.display = 'none';
-      pages[4].style.display = 'flex';
-      pages[5].style.display = 'none';
-   }
-}
-
-button[3].addEventListener('click', pageControlThree);
-
-
-function pageControlFifth() {
-   pages[1].style.display = 'none';
-   pages[2].style.display = 'none';
-   pages[3].style.display = 'none';
-   pages[4].style.display = 'none';
-   pages[5].style.display = 'block';
-}
-
-button[4].addEventListener('click', pageControlFifth);
-
-function pageControlOne() {
-   pages[1].style.display = 'flex';
-   pages[2].style.display = 'none';
-   pages[3].style.display = 'none';
-   pages[4].style.display = 'none';
-   pages[5].style.display = 'none';
-}
-
-
-button[0].addEventListener('click', pageControlOne);
-button[5].addEventListener('click', pageControlOne);
-button[10].addEventListener('click', pageControlOne);
-button[15].addEventListener('click', pageControlOne);
-button[6].addEventListener('click', pageControlTwo);
-button[11].addEventListener('click', pageControlTwo);
-button[16].addEventListener('click', pageControlTwo);
-button[7].addEventListener('click', pageControlThree);
-button[12].addEventListener('click', pageControlThree);
-button[17].addEventListener('click', pageControlThree);
-button[8].addEventListener('click', pageControlFour);
-button[13].addEventListener('click', pageControlFour);
-button[18].addEventListener('click', pageControlFour);
-button[9].addEventListener('click', pageControlFifth);
-button[14].addEventListener('click', pageControlFifth);
-button[19].addEventListener('click', pageControlFifth);
-
-// arrow buttons
-
-// left arrow buttons
-
-function leftArrowClickOne() {
-   pages[1].style.display = 'none';
-   pages[0].style.display = 'block';
-}
-
-function leftArrowClickTwo() {
-   pages[2].style.display = 'none';
-   pages[1].style.display = 'flex';
-}
-
-function leftArrowClickThree() {
-   pages[3].style.display = 'none';
-   pages[2].style.display = 'flex';
-}
-function leftArrowClickFour() {
-   pages[4].style.display = 'none';
-   pages[3].style.display = 'flex';
-}
-
-function leftArrowClickFive() {
-   pages[5].style.display = 'none';
-   pages[4].style.display = 'flex';
-}
-
-goBackBtn[0].addEventListener('click', leftArrowClickOne);
-goBackBtn[1].addEventListener('click', leftArrowClickTwo);
-goBackBtn[2].addEventListener('click', leftArrowClickThree);
-goBackBtn[3].addEventListener('click', leftArrowClickFour);
-goBackBtn[4].addEventListener('click', leftArrowClickFive);
-
-// right arrow buttons
-
-
-function rightArrowClickOne() {
-   pages[1].style.display = 'none';
-   pages[2].style.display = 'flex';
-}
-
-function rightArrowClickTwo() {
-   pages[2].style.display = 'none';
-   pages[3].style.display = 'flex';
-}
-function rightArrowClickThree() {
-   pages[3].style.display = 'none';
-   pages[4].style.display = 'flex';
-}
-
-function rightArrowClickFour() {
-   pages[4].style.display = 'none';
-   pages[5].style.display = 'block';
-}
-
-nextPage[0].addEventListener('click', rightArrowClickOne);
-nextPage[1].addEventListener('click', rightArrowClickTwo);
-nextPage[2].addEventListener('click', rightArrowClickThree);
-nextPage[3].addEventListener('click', rightArrowClickFour);
-
-*/
