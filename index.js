@@ -23,8 +23,12 @@ const number = document.getElementById('phone');
 const experienceGenerator = document.getElementById('experience-generator');
 const addSkills = document.getElementById('add-skills');
 const experience = document.getElementById('experience');
-const skills = document.querySelector('.skills')
-let skillsResult = [];
+const skills = document.querySelector('.skills');
+
+//third-page
+const when = document.querySelectorAll('.when');
+const covid = document.querySelectorAll('.covid');
+const vaccinated = document.querySelectorAll('.vaccinated');
 
 //last page vars
 
@@ -245,6 +249,7 @@ async function getSkillsData() {
 }
 getSkillsData();
 
+let skillsResult = [];
 let sum = 0;
 let sPreviousEl = '';
 let sCurrentEl = '';
@@ -420,6 +425,42 @@ arrowRight[1].addEventListener('click', pageControlTwo);
 // third page
 
 // nav control third page
+let covidValue;
+let vaccinatedValue;
+
+function covidCheck(event) { 
+   let el = event.target;
+   if(el === covid[0]){
+       covidValue = 1;
+   }
+   if(el === covid[1]){
+       covidValue = 0;
+   }
+
+if(covidValue === 1) {
+   when[0].style.display = 'block'
+}
+if(covidValue === 0) {
+   when[0].style.display = 'none'
+}
+   if(el === vaccinated[0]){
+       vaccinatedValue = 1;
+   }
+   if(el === vaccinated[1]){
+       vaccinatedValue = 0;
+   }
+if(vaccinatedValue === 1) {
+   when[1].style.display = 'block'
+}
+if(vaccinatedValue === 0) {
+   when[1].style.display = 'none'
+}
+}
+
+covid[0].addEventListener('click', covidCheck);
+covid[1].addEventListener('click', covidCheck);
+vaccinated[0].addEventListener('click', covidCheck);
+vaccinated[1].addEventListener('click', covidCheck);
 
 function pageControlThree(event) {
 
