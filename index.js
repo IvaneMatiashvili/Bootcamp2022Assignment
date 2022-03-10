@@ -24,6 +24,7 @@ const experienceGenerator = document.getElementById('experience-generator');
 const addSkills = document.getElementById('add-skills');
 const experience = document.getElementById('experience');
 const skills = document.querySelector('.skills');
+const sErrorOne = document.querySelectorAll('.s-error--one');
 
 //third-page
 
@@ -264,11 +265,11 @@ async function getSkillsData() {
 getSkillsData();
 
 let skillsResult = [];
-let sum = 0;
+let finalResultSkills = [];
+let sSum = 0;
 let sPreviousEl = '';
 let sCurrentEl = '';
 
-let arr = [];
 
 function addSkillsF() {
 
@@ -276,10 +277,16 @@ function addSkillsF() {
 
 
    if (sCurrentEl !== sPreviousEl) {
+      sSum++;
+
+      if (sSum <= 0) {
+         sErrorOne[0].style.display = 'block';
+      }
+      if (sSum > 0) {
+         sErrorOne[0].style.display = 'none';
+      }
+
       sPreviousEl = skills.value.trim();
-
-
-      sum++;
 
       let el = document.createElement('li');
 
@@ -301,89 +308,66 @@ function addSkillsF() {
       el.appendChild(elChiledThree);
 
       experienceGenerator.appendChild(el);
-      if (sum === 1) {
-         if (experienceGenerator.childNodes[7].childNodes[2]) {
-            experienceGenerator.childNodes[7].childNodes[2].addEventListener('click', () => {
-               experienceGenerator.childNodes[7].remove();
-               sum--;
-               sPreviousEl = '';
-            })
+
+
+      function removeEl(event) {
+         let el = event.target
+         if (el === experienceGenerator.childNodes[7]?.childNodes[2]) {
+            experienceGenerator.childNodes[7].remove();
+            sSum--;
+            sPreviousEl = '';
+         }
+         if (el === experienceGenerator.childNodes[8]?.childNodes[2]) {
+            experienceGenerator.childNodes[8].remove();
+            sSum--;
+            sPreviousEl = '';
+         }
+         if (el === experienceGenerator.childNodes[9]?.childNodes[2]) {
+            experienceGenerator.childNodes[9].remove();
+            sSum--;
+            sPreviousEl = '';
+         }
+         if (el === experienceGenerator.childNodes[10]?.childNodes[2]) {
+            experienceGenerator.childNodes[10].remove();
+            sSum--;
+            sPreviousEl = '';
+         }
+         if (el === experienceGenerator.childNodes[11]?.childNodes[2]) {
+            experienceGenerator.childNodes[11].remove();
+            sSum--;
+            sPreviousEl = '';
+         }
+         if (el === experienceGenerator.childNodes[12]?.childNodes[2]) {
+            experienceGenerator.childNodes[12].remove();
+            sSum--;
+            sPreviousEl = '';
+         }
+         if (el === experienceGenerator.childNodes[13]?.childNodes[2]) {
+            experienceGenerator.childNodes[13].remove();
+            sSum--;
+            sPreviousEl = '';
+         }
+         if (el === experienceGenerator.childNodes[14]?.childNodes[2]) {
+            experienceGenerator.childNodes[14].remove();
+            sSum--;
+            sPreviousEl = '';
          }
       }
-      if (sum === 2) {
-         if (experienceGenerator.childNodes[8].childNodes[2]) {
-            experienceGenerator.childNodes[8].childNodes[2].addEventListener('click', () => {
-               if (sum === 1) {
-                  experienceGenerator.childNodes[7].remove();
-                  sum--;
-                  sPreviousEl = '';
-               }
-               if (sum === 2) {
-                  experienceGenerator.childNodes[8].remove();
-                  sum--;
-                  sPreviousEl = '';
-               }
-            })
-         }
-      }
-      if (sum === 3) {
-         if (experienceGenerator.childNodes[9].childNodes[2]) {
-            experienceGenerator.childNodes[9].childNodes[2].addEventListener('click', () => {
-               experienceGenerator.childNodes[9].remove();
-               sum--;
-               sPreviousEl = '';
-            })
-         }
-      }
-      if (sum === 4) {
-         if (experienceGenerator.childNodes[10].childNodes[2]) {
-            experienceGenerator.childNodes[10].childNodes[2].addEventListener('click', () => {
-               experienceGenerator.childNodes[10].remove();
-               sum--;
-               sPreviousEl = '';
-            })
-         }
-      }
-      if (sum === 5) {
-         if (experienceGenerator.childNodes[11].childNodes[2]) {
-            experienceGenerator.childNodes[11].childNodes[2].addEventListener('click', () => {
-               experienceGenerator.childNodes[11].remove();
-               sum--;
-               sPreviousEl = '';
-            })
-         }
-      }
-      if (sum === 6) {
-         if (experienceGenerator.childNodes[12].childNodes[2]) {
-            experienceGenerator.childNodes[12].childNodes[2].addEventListener('click', () => {
-               experienceGenerator.childNodes[12].remove();
-               sum--;
-               sPreviousEl = '';
-            })
-         }
-      }
-      if (sum === 7) {
-         if (experienceGenerator.childNodes[13].childNodes[2]) {
-            experienceGenerator.childNodes[13].childNodes[2].addEventListener('click', () => {
-               experienceGenerator.childNodes[13].remove();
-               sum--;
-               sPreviousEl = '';
-            })
-         }
-      }
-      if (sum === 8) {
-         if (experienceGenerator.childNodes[14].childNodes[2]) {
-            experienceGenerator.childNodes[14].childNodes[2].addEventListener('click', () => {
-               experienceGenerator.childNodes[14].remove();
-               sum--;
-               sPreviousEl = '';
-            })
-         }
-      }
+
+      experienceGenerator.childNodes[7]?.childNodes[2].addEventListener('click', removeEl)
+      experienceGenerator.childNodes[8]?.childNodes[2].addEventListener('click', removeEl)
+      experienceGenerator.childNodes[9]?.childNodes[2].addEventListener('click', removeEl)
+      experienceGenerator.childNodes[10]?.childNodes[2].addEventListener('click', removeEl)
+      experienceGenerator.childNodes[11]?.childNodes[2].addEventListener('click', removeEl)
+      experienceGenerator.childNodes[12]?.childNodes[2].addEventListener('click', removeEl)
+      experienceGenerator.childNodes[13]?.childNodes[2].addEventListener('click', removeEl)
+      experienceGenerator.childNodes[14]?.childNodes[2].addEventListener('click', removeEl)
+
    }
 }
 
 addSkills.addEventListener('click', addSkillsF);
+
 
 // nav control second page
 
@@ -397,30 +381,33 @@ function pageControlTwo(event) {
       pages[4].style.display = 'none';
       pages[5].style.display = 'none';
    }
-   if (el === button[7]) {
-      pages[1].style.display = 'none';
-      pages[2].style.display = 'none';
-      pages[3].style.display = 'flex';
-      pages[4].style.display = 'none';
-      pages[5].style.display = 'none';
-   }
-   if (el === button[8]) {
-      pages[1].style.display = 'none';
-      pages[2].style.display = 'none';
-      pages[3].style.display = 'none';
-      pages[4].style.display = 'flex';
-      pages[5].style.display = 'none';
-   }
-   if (el === button[9]) {
-      pages[1].style.display = 'none';
-      pages[2].style.display = 'none';
-      pages[3].style.display = 'none';
-      pages[4].style.display = 'none';
-      pages[5].style.display = 'block';
-   }
-   if (el === nextPage[1] || el === arrowRight[1]) {
-      pages[2].style.display = 'none';
-      pages[3].style.display = 'flex';
+
+   if (sSum > 0) {
+      if (el === button[7]) {
+         pages[1].style.display = 'none';
+         pages[2].style.display = 'none';
+         pages[3].style.display = 'flex';
+         pages[4].style.display = 'none';
+         pages[5].style.display = 'none';
+      }
+      if (el === button[8]) {
+         pages[1].style.display = 'none';
+         pages[2].style.display = 'none';
+         pages[3].style.display = 'none';
+         pages[4].style.display = 'flex';
+         pages[5].style.display = 'none';
+      }
+      if (el === button[9]) {
+         pages[1].style.display = 'none';
+         pages[2].style.display = 'none';
+         pages[3].style.display = 'none';
+         pages[4].style.display = 'none';
+         pages[5].style.display = 'block';
+      }
+      if (el === nextPage[1] || el === arrowRight[1]) {
+         pages[2].style.display = 'none';
+         pages[3].style.display = 'flex';
+      }
    }
 }
 
@@ -450,17 +437,19 @@ function covidCheckK(event) {
    let el = event.target;
 
    if (el === workLocation[0]) {
-      workLocation = 'From Sairme Office';
+      workLocationValue = 'From Sairme Office';
       thErrorOne[0].style.display = 'none';
    }
    if (el === workLocation[1]) {
       workLocationValue = 'From Home';
       thErrorOne[0].style.display = 'none';
    }
+
    if (el === workLocation[2]) {
       workLocationValue = 'Hybrid';
       thErrorOne[0].style.display = 'none';
    }
+
    workLocationArr.push(workLocationValue);
 
    if (el === covid[0]) {
@@ -502,6 +491,7 @@ function covidCheckK(event) {
 
 workLocation[0].addEventListener('click', covidCheckK);
 workLocation[1].addEventListener('click', covidCheckK);
+workLocation[2].addEventListener('click', covidCheckK);
 
 covid[0].addEventListener('click', covidCheckK);
 covid[1].addEventListener('click', covidCheckK);
@@ -676,7 +666,7 @@ arrowRight[2].addEventListener('click', pageControlThree);
 let devtalkValue;
 let devtalkArr = [];
 
-function covidCheck(event) {
+function devtalkk(event) {
    let el = event.target;
    if (el === devtalk[0]) {
       devtalkValue = true;
@@ -696,8 +686,8 @@ function covidCheck(event) {
    if (devtalkArr[devtalkArr.length - 1] !== undefined) foErrorOne[0].style.display = 'none';
 }
 
-devtalk[0].addEventListener('click', covidCheck);
-devtalk[1].addEventListener('click', covidCheck);
+devtalk[0].addEventListener('click', devtalkk);
+devtalk[1].addEventListener('click', devtalkk);
 
 let foTextareaValue;
 let foTextareaArr = [];
