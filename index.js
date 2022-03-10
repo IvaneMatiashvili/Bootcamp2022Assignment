@@ -7,6 +7,7 @@ const pages = document.querySelectorAll('.pages');
 const button = document.querySelectorAll('.current__page');
 const arrowLeft = document.querySelectorAll('.arrow.left');
 const arrowRight = document.querySelectorAll('.arrow.right');
+const subm = document.querySelectorAll('.subm');
 
 
 // form first-page
@@ -52,6 +53,9 @@ const submit = document.getElementById('submit');
 
 // start page
 
+subm[0].addEventListener('click', () => {
+   alert('This page is empty')
+})
 
 function startQuestionnare() {
 
@@ -63,6 +67,7 @@ startBtn.addEventListener('click', startQuestionnare);
 
 
 // first page
+
 
 let counterOne = 0;
 

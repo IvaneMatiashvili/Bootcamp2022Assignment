@@ -14,7 +14,7 @@
     background-size: cover;
     background-repeat: repeat;
     overflow: hidden;
-    display: none;
+    display: block;
 }
 
 #start-page-header {
