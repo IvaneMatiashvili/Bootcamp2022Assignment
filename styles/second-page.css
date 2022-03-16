@@ -121,6 +121,8 @@
     color: #ff3860;
     text-align: left;
     display: block;
+    position: relative;
+    bottom: 1.5rem;
 }
 
 #second-page footer {

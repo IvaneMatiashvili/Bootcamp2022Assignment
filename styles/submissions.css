@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: #0C0D0E;
+    display: block;
+}
+
+header {
+    height: 10rem;
+    align-items: center;
+}
+
+.header {
+    height: 60%;
+    width: 72%;
+    text-align: center;
+}
+
+h1 {
+    padding-top: 3rem;
+    color: #FFFFFF;
+    font-family: 'Rowdies';
+    font-weight: bold;
+    font-size: 54px;
+    line-height: 69.55px;
+    letter-spacing: 8px;
+}
+
+.sections {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.submissionss {
+    width: 70%;
+    height: 100%;
+    align-items: center;
+    margin: 2rem auto;
+    margin-bottom: -55rem;
+}
+
+.container-one {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 5%;
+    background-color: #FE3B1F;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    justify-content: space-between; 
+}
+
+
+.subm-header.one {
+    color: #FFFFFF;
+    font-size: 20px;
+    position: relative;
+    top: -1px;
+    margin-left: 0.8rem;
+}
+
+.arrow {
+    border: solid #FFFFFF;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-right: 1rem;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.container-two {
+    margin-top: 2rem;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #FE3B1F;
+    cursor: pointer;
+    flex-direction: column;
+    display: none;
+}
+
+.subm-header {
+    color: #FFFFFF;
+    font-size: 20px;
+    position: relative;
+    top: 10px;
+    margin-left: 0.8rem;
+}
+
+.arrow-container {
+    width: 100%;
+    height: 0;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    top: 1rem;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+
+h3 {
+    color: #FE3B1F;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.data {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #FFFFFF;
+    margin-top: 1.4rem;
+    width: 100%;
+    height: 160vh;
+    padding-bottom: 5rem;
+}
+
+.personal-information {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-left: 13rem;
+}
+
+.personal-information__data {
+    text-align: left;
+    display: flex;
+}
+
+.personal-information h3 {
+    margin-top: 2rem;
+}
+
+.personal-information ul {
+    list-style: none;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.personal-information li {
+    margin-top: 2rem;
+    font-style: italic;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+}
+
+.personal-data {
+    margin-left: -3rem;
+}
+
+.personal-information.skills {
+    margin-left: 3rem;
+}
+
+.personal-information.skills .personal-data {
+    margin-left: -5rem;
+}
+
+.check {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    margin-right: 8px;
+}
+
+
+.check.mark {
+    background-color: #ccc;
+}
+
+.personal-information.covid {
+    margin-top: 4rem;
+}
+
+.personal-information__data.covid, .insigts {
+    display: flex;
+    flex-direction: column;
+    font-style: italic;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.question {
+    margin-top: 4rem;
+}
+
+.question.covid.first {
+    margin-top: 1rem;
+}
+
+.date.covid {
+    padding: 1rem 8rem;
+    border: 2px solid #ccc;
+}
+
+.date.covid p {
+    position: relative;
+    right: 5rem;
+    color: rgb(139, 127, 127);
+}
+
+
+
+
+.personal-information.insigts {
+    margin-left: 3rem;
+    margin-top: 4rem;
+}
+
+.question.insigts.first {
+    margin-top: 1rem;
+}
+
+.text.insigts {
+    padding: 1rem 8rem;
+    border: 2px solid #ccc;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.text.insigts p {
+    font-size: 13px;
+    width: 100%;
+    position: relative;
+    left: 2rem;
+    color: rgb(139, 127, 127);
+}
